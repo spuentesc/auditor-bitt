@@ -405,22 +405,88 @@ function splitLinkedInPdf(txt){
   return {acerca, experiencia, url: um?um[0]:'', titular};
 }
 
-function Dropzone({mode,onPick,onDrop}){
+/* ===== Pantallazos del celular: OCR en el navegador con Tesseract.js ===== */
+let tessP=null;
+function loadTesseract(){
+  if(window.Tesseract) return Promise.resolve(window.Tesseract);
+  if(!tessP) tessP=new Promise((res,rej)=>{ const s=document.createElement('script');
+    s.src='https://cdn.jsdelivr.net/npm/tesseract.js@5.1.1/dist/tesseract.min.js';
+    s.onload=()=>res(window.Tesseract); s.onerror=()=>{tessP=null; rej(new Error('cdn'));}; document.head.appendChild(s); });
+  return tessP;
+}
+async function ocrImages(files,onProg){
+  const T=await loadTesseract();
+  onProg('Preparando el lector de texto (la primera vez tarda unos segundos)…');
+  const w=await T.createWorker('spa+eng');
+  const out=[];
+  for(let i=0;i<files.length;i++){
+    onProg(`Leyendo pantallazo ${i+1} de ${files.length}…`);
+    const {data}=await w.recognize(files[i]);
+    out.push(data.text||'');
+  }
+  await w.terminate();
+  return out.join('\n');
+}
+const SEC_END=/^(educaci[oó]n|education|aptitudes|skills|licencias|licenses|actividad|activity|recomendaciones|recommendations|idiomas|languages|intereses|interests|reconocimientos|honors|publicaciones|publications|cursos|courses|causas|voluntariado|volunteer|destacado|featured|anal[ií]tica|analytics|recursos|resources|tambi[eé]n te puede|people also|personas que)/i;
+const UI_JUNK=/^(ver m[aá]s|see more|…\s*ver m[aá]s|mostrar (todas|todos|m[aá]s)|show all|mensaje|message|conectar|connect|seguir|follow|abrir a|open to|agregar secci[oó]n|add section|mejorar perfil|enhance profile|m[aá]s|more|editar|edit|inicio|home|mi red|my network|publicar|post|notificaciones|notifications|empleos|jobs|buscar|search|privado|private|solo para ti)$/i;
+function splitLinkedInShots(raw){
+  const L=raw.split('\n').map(s=>s.replace(/[|«»©®]+$/,'').replace(/\s+/g,' ').trim())
+    .filter(l=>l.length>1 && !UI_JUNK.test(l) && !/^\d{1,2}[:.]\d{2}\b/.test(l) && !/^[^A-Za-zÁÉÍÓÚáéíóúñÑ0-9]*$/.test(l));
+  const isAbout=l=>/^(acerca de|about|extracto)$/i.test(l);
+  const isExp=l=>/^(experiencia|experience)$/i.test(l);
+  const isProj=l=>/^(proyectos|projects)$/i.test(l);
+  let sec='top'; const top=[], ac=[], ex=[];
+  for(const l of L){
+    if(isAbout(l)){ sec='about'; continue; }
+    if(isExp(l)||isProj(l)){ sec='exp'; continue; }
+    if(SEC_END.test(l) && l.split(' ').length<=4){ sec='skip'; continue; }
+    if(sec==='top') top.push(l); else if(sec==='about') ac.push(l); else if(sec==='exp') ex.push(l);
+  }
+  const loc=/,\s*(colombia|bogot|medell|cali|distrito|estados unidos|united states|m[eé]xico|espa)|^(bogot|medell)/i;
+  const noise=/seguidores|followers|contactos|connections|linkedin\.com|@|informaci[oó]n de contacto|contact info|^\d+\+?\s/i;
+  const cand=top.filter(l=>l.length>=20 && !loc.test(l) && !noise.test(l));
+  const titular=(cand.find(l=>/[|·•]/.test(l))||cand.sort((a,b)=>b.length-a.length)[0]||'').slice(0,240);
+  const um=raw.replace(/\s+/g,' ').match(/(?:www\.)?linkedin\.com\/in\/[A-Za-z0-9\-_%]+/i);
+  return {titular, acerca:ac.join(' '), experiencia:ex.join('\n'), url:um?um[0]:''};
+}
+
+function Dropzone({mode,onPick,onDrop,onShots}){
   const [over,setOver]=useState(false);
-  return <div onDragOver={e=>{e.preventDefault();setOver(true);}} onDragLeave={()=>setOver(false)}
-    onDrop={e=>{e.preventDefault();setOver(false);onDrop(e.dataTransfer.files?.[0]);}}
-    className={"rounded-2xl border-2 border-dashed p-4 sm:p-5 flex flex-col sm:flex-row gap-4 sm:items-center transition "+(over?'border-sky bg-accentsoft':'border-[#9CC3F2] bg-surface2')}>
-    <div className="flex-1 min-w-0">
-      <div className="font-extrabold text-bitt">{mode==='cv'?'Sube tu CV en PDF':'Sube tu perfil de LinkedIn en PDF'}</div>
-      {mode==='cv'
-        ? <p className="text-sm text-muted mt-0.5">Arrástralo aquí o búscalo en tu computador. Se analiza al instante.</p>
-        : <ol className="text-sm text-muted mt-1 list-decimal pl-5 space-y-0.5">
-            <li>Abre tu perfil en LinkedIn desde el computador.</li>
-            <li>Toca <b className="text-fg">Recursos</b> (o <b className="text-fg">Más</b>) debajo de tu foto y elige <b className="text-fg">Guardar en PDF</b>.</li>
-            <li>Arrastra ese PDF aquí.</li>
-          </ol>}
+  const [src,setSrc]=useState(()=>{ try{ return (window.matchMedia('(pointer:coarse)').matches||window.innerWidth<768)?'cel':'pc'; }catch(e){ return 'pc'; } });
+  const shotRef=useRef(null);
+  const zone="rounded-2xl border-2 border-dashed p-4 sm:p-5 flex flex-col sm:flex-row gap-4 sm:items-center transition "+(over?'border-sky bg-accentsoft':'border-[#9CC3F2] bg-surface2');
+  const drop=e=>{ e.preventDefault(); setOver(false); const fs=[...(e.dataTransfer.files||[])];
+    if(mode==='li' && fs.length && fs.every(f=>/^image\//.test(f.type))) onShots(fs); else onDrop(fs[0]); };
+  const body = mode==='cv'
+    ? <><div className="font-extrabold text-bitt">Sube tu CV en PDF</div>
+        <p className="text-sm text-muted mt-0.5">Arrástralo aquí o búscalo en tu computador o celular. Se analiza al instante.</p></>
+    : src==='cel'
+    ? <><div className="font-extrabold text-bitt">Sube pantallazos de tu perfil</div>
+        <ol className="text-sm text-muted mt-1 list-decimal pl-5 space-y-0.5">
+          <li>En la app de LinkedIn abre tu perfil.</li>
+          <li>Toma pantallazos de: la parte de arriba (nombre y titular), <b className="text-fg">Acerca de</b> (toca <i>ver más</i> para que salga completo) y <b className="text-fg">Experiencia</b> (entra a <i>Mostrar todas</i>).</li>
+          <li>Súbelos todos juntos aquí. Leo el texto en tu celular, nada se envía.</li>
+        </ol>
+        <p className="text-xs text-muted mt-2"><b className="text-fg">Otra opción:</b> en la app toca el lápiz de una sección, deja presionado el texto, <i>Seleccionar todo</i> → <i>Copiar</i>, y pégalo en su campo de abajo.</p></>
+    : <><div className="font-extrabold text-bitt">Sube tu perfil de LinkedIn en PDF</div>
+        <ol className="text-sm text-muted mt-1 list-decimal pl-5 space-y-0.5">
+          <li>Abre tu perfil en LinkedIn desde el computador.</li>
+          <li>Toca <b className="text-fg">Recursos</b> (o <b className="text-fg">Más</b>) debajo de tu foto y elige <b className="text-fg">Guardar en PDF</b>.</li>
+          <li>Arrastra ese PDF aquí.</li>
+        </ol></>;
+  return <div className="flex flex-col gap-2">
+    {mode==='li' && <div className="flex gap-1 bg-surface2 p-1 rounded-xl self-start text-sm" role="group" aria-label="Cómo subir tu perfil">
+      {[['cel','Desde el celular'],['pc','Desde el computador']].map(([k,l])=><button key={k} id={'src-'+k} onClick={()=>setSrc(k)} aria-pressed={src===k}
+        className={"rounded-lg px-3 py-1.5 font-bold transition "+(src===k?'bg-surface text-bitt shadow-sm':'text-muted hover:text-fg')}>{l}</button>)}
+    </div>}
+    <div onDragOver={e=>{e.preventDefault();setOver(true);}} onDragLeave={()=>setOver(false)} onDrop={drop} className={zone}>
+      <div className="flex-1 min-w-0">{body}</div>
+      {mode==='li' && src==='cel'
+        ? <button onClick={()=>shotRef.current?.click()} className="shrink-0 rounded-xl bg-bitt text-white font-bold px-4 py-2.5 hover:brightness-110">Elegir pantallazos</button>
+        : <button onClick={onPick} className="shrink-0 rounded-xl bg-bitt text-white font-bold px-4 py-2.5 hover:brightness-110">Elegir archivo</button>}
+      <input ref={shotRef} id="shots" type="file" accept="image/*" multiple className="hidden"
+        onChange={e=>{ const fs=[...(e.target.files||[])]; e.target.value=''; if(fs.length) onShots(fs); }}/>
     </div>
-    <button onClick={onPick} className="shrink-0 rounded-xl bg-bitt text-white font-bold px-4 py-2.5 hover:brightness-110">Elegir archivo</button>
   </div>;
 }
 
@@ -573,6 +639,18 @@ function App(){
       }
     }catch(err){ setBusy('No pude leer ese archivo. Si tu PDF es una imagen escaneada, copia y pega el texto.'); }
   }
+  async function handleShots(fs){
+    fs=[...fs].sort((x,y)=>(x.lastModified-y.lastModified)||x.name.localeCompare(y.name)).slice(0,8);
+    setBusy('Cargando el lector de texto…');
+    try{
+      const raw=await ocrImages(fs,setBusy);
+      const s=splitLinkedInShots(raw);
+      if(!s.acerca && !s.experiencia){ s.experiencia=raw; }
+      const nl={titular:s.titular, acerca:s.acerca, experiencia:s.experiencia, url:s.url||li.url};
+      setIsSample(false); setLi(nl); run(true,{li:nl});
+      setBusy(`Listo: leí ${fs.length} pantallazo${fs.length>1?'s':''}. Revisa abajo que el texto haya quedado bien (el lector a veces confunde letras) y vuelve a analizar si corriges algo.`);
+    }catch(err){ setBusy('No pude leer los pantallazos. Revisa tu conexión a internet, o copia y pega el texto en los campos de abajo.'); }
+  }
   function onFile(e){ handleFile(e.target.files?.[0]); e.target.value=''; }
   function clearAll(){ setIsSample(false); setResult(null); if(mode==='cv') setCv(''); else setLi({titular:'',acerca:'',experiencia:'',url:''}); setVacante(''); setBusy(''); }
 
@@ -600,7 +678,7 @@ function App(){
         <p className="mt-2 max-w-[620px] text-muted text-[16px]">Revisa tu hoja de vida o tu perfil como lo haría el filtro automático (ATS) de una empresa grande. Corrige, vuelve a subirlo y mira cuánto sube tu puntaje.</p>
         <div className="mt-6 flex gap-2 bg-surface border border-line shadow-sm p-1.5 rounded-2xl max-w-xl">
           {tab('cv','Auditoría de CV','Sube o pega tu hoja de vida')}
-          {tab('li','Auditoría de LinkedIn','Sube el PDF de tu perfil')}
+          {tab('li','Auditoría de LinkedIn','Pantallazos del cel o PDF')}
         </div>
       </div>
     </header>
@@ -616,7 +694,7 @@ function App(){
             <input ref={fileRef} id="file" type="file" accept=".pdf,.txt,application/pdf,text/plain" className="hidden" onChange={onFile}/>
           </div>
         </div>
-        <Dropzone mode={mode} onPick={()=>fileRef.current?.click()} onDrop={handleFile}/>
+        <Dropzone mode={mode} onPick={()=>fileRef.current?.click()} onDrop={handleFile} onShots={handleShots}/>
         {isSample && <div className="rounded-xl bg-sunsoft text-sunfg text-sm px-3.5 py-2.5"><b>Esto es un ejemplo</b> para que veas cómo funciona. Bórralo y pon el tuyo.</div>}
         {busy && <div className="rounded-xl bg-accentsoft text-fg text-sm px-3.5 py-2.5">{busy}</div>}
 
@@ -633,7 +711,7 @@ function App(){
           <Field id="exp" label="Experiencia (y proyectos)" hint="Pega cada cargo con su descripción. Una línea por logro.">
             <textarea id="exp" rows={7} className={inputCls+" mono text-[13px]"} value={li.experiencia} onChange={e=>{setLi({...li,experiencia:e.target.value});setIsSample(false);}}/>
           </Field>
-          <Field id="url" label="Link de tu perfil" hint="Solo con el link no puedo leer tu perfil, porque LinkedIn no deja que otras páginas lo lean. Con el link reviso si tu URL está personalizada; el contenido sale del PDF o de lo que pegues arriba.">
+          <Field id="url" label="Link de tu perfil" hint="Solo con el link no puedo leer tu perfil, porque LinkedIn no deja que otras páginas lo lean. Con el link reviso si tu URL está personalizada; el contenido sale de los pantallazos, el PDF o lo que pegues arriba.">
             <input id="url" className={inputCls} value={li.url} onChange={e=>{setLi({...li,url:e.target.value});setIsSample(false);}} placeholder="linkedin.com/in/tu-nombre"/>
           </Field>
           <PhotoCheck/>
