@@ -1,0 +1,760 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Auditor de CV y LinkedIn</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8yIiBkYXRhLW5hbWU9IkNhcGEgMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNzA1Ljg1IDcwNS44NSI+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5jbHMtMSB7CiAgICAgICAgZmlsbDogI2ZmZjsKICAgICAgfQoKICAgICAgLmNscy0yIHsKICAgICAgICBmaWxsOiAjMTEzY2JiOwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8ZyBpZD0iQ2FwYV8xLTIiIGRhdGEtbmFtZT0iQ2FwYSAxIj4KICAgIDxyZWN0IGNsYXNzPSJjbHMtMiIgd2lkdGg9IjcwNS44NSIgaGVpZ2h0PSI3MDUuODUiLz4KICAgIDxnPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Im00ODguOTUsMTUyLjg3bC0yMy4wNiwxOS4zNWMtMy4yMSwyLjY5LTcuNzUsMy4wOC0xMS4zOSwxLjAyLTE5LjY4LTExLjE0LTQxLjI0LTE5LjEtNjMuODgtMjMuMzEtNC4xMi0uNzYtNy4zNC0zLjk4LTguMDYtOC4xbC01LjIzLTI5LjY0Yy0uOC00LjU1LTQuNjEtNy45OC05LjIyLTguMjYtMTkuMTYtMS4xNi0zOC43NS0uMTEtNTguNDgsMy4zNy0xOS43MywzLjQ4LTM4LjUsOS4yLTU2LjExLDE2Ljg0LTQuMjQsMS44NC02LjY0LDYuMzctNS44NCwxMC45MWw1LjIzLDI5LjY0Yy43Myw0LjEyLTEuMiw4LjI0LTQuODEsMTAuMzctMTkuODQsMTEuNy0zNy4zNywyNi41NS01Mi4wNiw0My43NS0yLjcyLDMuMTktNy4xMiw0LjM4LTExLjA2LDIuOTRsLTI4LjI5LTEwLjNjLTQuMzQtMS41OC05LjIxLDAtMTEuNzYsMy44NS0yMS40MiwzMi4zNi0zNS4zNiw2OS43My0zOS44NiwxMDkuMzItLjUyLDQuNTksMi4yLDguOTQsNi41NCwxMC41MWwyOC4zMiwxMC4zMWMzLjkzLDEuNDMsNi41NCw1LjE2LDYuNTgsOS4zNS4xMSwxMS4yMiwxLjE0LDIyLjU3LDMuMTUsMzMuOTgsMi4wMSwxMS40MSw0LjkzLDIyLjQzLDguNjYsMzMuMDEsMS4zOSwzLjk1LjIyLDguMzQtMi45OCwxMS4wM2wtMjMuMDksMTkuMzdjLTMuNTQsMi45Ny00LjYsNy45OC0yLjU1LDEyLjEyLDE3Ljc3LDM1LjY2LDQzLjY1LDY2LjAxLDc0Ljg1LDg5LjA5LDMuNzEsMi43NSw4LjgzLDIuNTYsMTIuMzctLjQxbDIzLjA2LTE5LjM1YzMuMjEtMi42OSw3Ljc1LTMuMDgsMTEuMzktMS4wMiwxOS42OCwxMS4xNCw0MS4yNCwxOS4xLDYzLjg4LDIzLjMxLDQuMTIuNzYsNy4zNCwzLjk4LDguMDYsOC4xbDUuMjMsMjkuNjRjLjgsNC41NSw0LjYxLDcuOTgsOS4yMiw4LjI2LDE5LjE2LDEuMTYsMzguNzUuMTEsNTguNDgtMy4zNywxOS43My0zLjQ4LDM4LjUtOS4yLDU2LjExLTE2Ljg0LDQuMjQtMS44NCw2LjY0LTYuMzcsNS44NC0xMC45MWwtNS4yMy0yOS42NGMtLjczLTQuMTIsMS4yLTguMjQsNC44MS0xMC4zNywxOS44NC0xMS43LDM3LjM3LTI2LjU1LDUyLjA2LTQzLjc1LDIuNzItMy4xOSw3LjEyLTQuMzgsMTEuMDYtMi45NGwyOC4yOSwxMC4zYzQuMzQsMS41OCw5LjIxLDAsMTEuNzYtMy44NSwyMS40Mi0zMi4zNiwzNS4zNi02OS43MywzOS44Ni0xMDkuMzIuNTItNC41OS0yLjItOC45NC02LjU0LTEwLjUxbC0yOC4zMi0xMC4zMWMtMy45My0xLjQzLTYuNTQtNS4xNi02LjU4LTkuMzUtLjExLTExLjIyLTEuMTQtMjIuNTctMy4xNS0zMy45OC0yLjAxLTExLjQxLTQuOTMtMjIuNDMtOC42Ni0zMy4wMS0xLjM5LTMuOTUtLjIyLTguMzQsMi45OC0xMS4wM2wyMy4wOS0xOS4zN2MzLjU0LTIuOTcsNC42LTcuOTgsMi41NS0xMi4xMi0xNy43Ny0zNS42Ni00My42NS02Ni4wMS03NC44NS04OS4wOS0zLjcxLTIuNzUtOC44My0yLjU2LTEyLjM3LjQxWm0yMi4yOCwxODcuNjNjMy43NSw0Ny4wNS0xMy42OSw5MS43Ni00NS4wMiwxMjMuNzEtNy4xLDcuMjQtMTQuOTIsMTMuODItMjMuMzYsMTkuNjMtMTguMTYsMTIuNDktMzkuMjIsMjEuMzktNjIuMzUsMjUuNDYtMjMuMTIsNC4wOC00NS45NiwyLjkyLTY3LjMtMi42LTkuOTItMi41Ny0xOS41MS02LjA4LTI4LjY2LTEwLjQ2LTQwLjM2LTE5LjMtNzIuMDUtNTUuMzYtODQuNjItMTAwLjg1LTEuMzQtNC44Ni0yLjQ3LTkuODItMy4zNy0xNC44OS0uODktNS4wNy0xLjUzLTEwLjEyLTEuOTMtMTUuMTQtMy43NS00Ny4wNSwxMy42OS05MS43Niw0NS4wMi0xMjMuNzEsNy4xLTcuMjQsMTQuOTItMTMuODIsMjMuMzYtMTkuNjMsMTguMTYtMTIuNDksMzkuMjItMjEuMzksNjIuMzUtMjUuNDYsMjMuMTItNC4wOCw0NS45Ni0yLjkyLDY3LjMsMi42LDkuOTIsMi41NywxOS41MSw2LjA4LDI4LjY2LDEwLjQ2LDQwLjM2LDE5LjMsNzIuMDUsNTUuMzYsODQuNjIsMTAwLjg1LDEuMzQsNC44NiwyLjQ3LDkuODIsMy4zNywxNC44OS44OSw1LjA3LDEuNTMsMTAuMTIsMS45MywxNS4xNFoiLz4KICAgICAgPGc+CiAgICAgICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJtMzQwLjk4LDMzMy40OGwxNS41NC0zOC43YzIuNC01Ljk3LDkuMjUtOC43OCwxNS4xNC02LjIybDk2LjQsNDEuODdjNS41NCwyLjQxLDguMjUsOC43MSw2LjE4LDE0LjM4bC00OS4xNywxMzUuMDFjLTEuODYsNS4xLTkuMTIsNC45Ny0xMC44LS4ybC0yOS4xOC05MC4xNmMtLjgzLTIuNTctMi41NS00Ljc3LTQuODUtNi4xOWwtMTEuMDItNi44MmMtMS4wOC0uNjctMi4wNC0xLjUxLTIuODQtMi40OWwtMjMuNjYtMjkuMDFjLTIuNjMtMy4yMi0zLjMtNy42MS0xLjc1LTExLjQ3WiIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTMyMi44LDI5Mi45OWw5LjUzLDkuNDFjMS4wOSwxLjA4LDIuNjMsMS41OSw0LjE1LDEuMzdsNS4zOC0uNzZjMi4zLS4zMiwzLjg1LDEuMDIsNS41OSwyLjI5LjYyLjQ1LDEuMzYuNzgsMi4wMy4yNS42Mi0uNDkuNzQtMS40Ni4yNC0yLjA2LTEuNDktMS43Ny0zLjQzLTYuMTMtNi4yMS01Ljc0bC00LjkyLjY5Yy0xLjA2LjE1LTIuMDUtLjU5LTIuMi0xLjY1bC0uNzMtNS4yLTEuNTQtMTAuOTZjLS4xNS0xLjA2LTEuMTMtMS44LTIuMi0xLjY1bC0xMC45NiwxLjU0Yy0xLjA2LjE1LTIuMDUtLjU5LTIuMi0xLjY1bC0xLjcyLTEyLjI2Yy0uMTgtMS4yOC0xLjUzLTIuMDMtMi43MS0xLjUxbC0xMi4xNSw1LjM0Yy0xLjE4LjUyLTIuNTMtLjIzLTIuNzEtMS41MWwtMi4wMy0xNC40N2MtLjI4LTItMS43LTMuNjUtMy42My00LjI0bC0zMy0xMC4wM2MtNC4zOS0xLjM0LTguMDYsMy41NC01LjU2LDcuMzlsMTkuNTksMzAuMTljMS40OSwyLjMsMy44NCwzLjkyLDYuNTIsNC40OWwzNS44MSw3LjdjMi4xMi40Niw0LjA3LDEuNTEsNS42MiwzLjA0WiIvPgogICAgICA8L2c+CiAgICA8L2c+CiAgPC9nPgo8L3N2Zz4=">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800&family=DM+Mono:wght@400;500&display=swap">
+<style>
+/* Tema único claro (decisión de marca). Layout: encabezado claro con logo azul, luego dos columnas (entrada | resultado) que se apilan en móvil */
+:root{
+  --bitt:#113CBB; --sky:#2EBDEF; --sun:#EFC050; --cream:#F0E4CA;
+  --bg:#E6F1FD; --surface:#FFFFFF; --surface-2:#F1F6FE; --line:#D2E1F6;
+  --fg:#0E1B3D; --muted:#4E5D86; --accent:#113CBB; --accent-soft:#DCE8FC;
+  --sun-soft:#FCF1D2; --sun-fg:#6E5000;
+  --good:#11804A; --good-soft:#DDF3E7; --warn:#9A6300; --warn-soft:#FBEFD4; --bad:#C2342B; --bad-soft:#FBE2E0;
+  color-scheme:light;
+  --display:"DM Sans",ui-sans-serif,system-ui,sans-serif; --mono:"DM Mono",ui-monospace,Consolas,monospace;
+}
+html,body{background:var(--bg);color:var(--fg);font-family:var(--display)}
+body{font-size:15px;line-height:1.5}
+h1,h2,h3{text-wrap:balance}
+.wrap{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+textarea,input,select{font-family:var(--display)}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+:focus-visible{outline:3px solid var(--sky);outline-offset:2px}
+.bar{transition:width .6s cubic-bezier(.2,.8,.2,1)}
+@media (prefers-reduced-motion: reduce){.bar{transition:none}}
+.gear{animation:spin 18s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion: reduce){.gear{animation:none}}
+</style>
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script>
+tailwind.config={theme:{extend:{colors:{
+  bitt:'var(--bitt)',sky:'var(--sky)',sun:'var(--sun)',
+  bg:'var(--bg)',surface:'var(--surface)',surface2:'var(--surface-2)',line:'var(--line)',
+  fg:'var(--fg)',muted:'var(--muted)',accent:'var(--accent)',accentsoft:'var(--accent-soft)',
+  sunsoft:'var(--sun-soft)',sunfg:'var(--sun-fg)',
+  good:'var(--good)',goodsoft:'var(--good-soft)',warn:'var(--warn)',warnsoft:'var(--warn-soft)',bad:'var(--bad)',badsoft:'var(--bad-soft)'
+}}}};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.24.7/babel.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js"></script>
+
+<div id="root"></div>
+
+<script>
+/* ===================== MOTOR DE EVALUACIÓN (sin API) ===================== */
+window.Engine = (function(){
+  const norm = s => (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+  const STRONG = ['disen','desarroll','lider','implement','constru','optimiz','reduj','reduc','aument','logr','gestion','coordin','analic','analiz','automatic','automatiz','program','prototip','valid','evalu','investig','public','present','ensen','capacit','mentor','dirig','fund','lanc','lanz','integr','mejor','document','model','fabriq','fabric','ensambl','ejecut','organic','organiz','negoci','supervis','entren','simul','caracteric','caracteriz','cultiv','proces','escrib','redact','obtuv','gane','gano','gana','administr','planifi','propus','propon','establec','identifiqu','identific','resolv','calibr','instal','cre','codifiqu','codific','dise','asesor','co-fund','cofund','estandaric','estandariz','migr','escal','transform','diagnostic','medi','cuantifiqu','cuantific','genere','gener','recaud','construc','aplic','despleg','desplieg','orient','analisis','ensenanza','liderazgo','direccion','coordinacion','creacion','elaboracion','evaluacion','supervision','formacion de','capacitacion','mantenimiento','administracion','prepar','elabor','sintetic','sintetiz','expus','expuse','mont','adapt','conect','consegu','seleccion','tradu','imparti','dict',
+    'designed','developed','led','built','created','implemented','reduced','increased','improved','managed','analyzed','analysed','automated','launched','founded','co-founded','delivered','engineered','prototyped','validated','tested','modeled','modelled','trained','taught','mentored','coordinated','organized','optimized','achieved','won','published','presented','wrote','programmed','coded','directed','established','integrated','deployed','fabricated','assembled','characterized','simulated','negotiated','raised','scaled','streamlined','spearheaded','supervised','conducted','performed','executed','planned','researched','authored','calibrated','installed','generated','secured'];
+  const WEAK = ['particip','ayud','apoy','colabore en','encargad','responsable de','estuve','tuve','hice','fui','realice','helped','assisted','worked on','responsible for','involved in','participated','supported'];
+  const CLICHES = ['proactiv','trabajo en equipo','responsable','comprometid','orientad[oa] a resultados','apasionad','dinamic','capacidad de liderazgo','buenas relaciones','relaciones interpersonales','facil aprendizaje','rapido aprendizaje','autodidacta','perfeccionista','multitarea','excelente comunicacion','habilidades blandas','persona integra','creativ','resilient','team player','hard[- ]working','detail[- ]oriented','self[- ]motivated','results[- ]driven','passionate','motivated','go[- ]getter','think outside the box','fast learner'];
+  const STOP = new Set(norm('a al algo algunos ante antes como con contra cual cuando de del desde donde durante e el ella ellos en entre era es esa ese eso esta este esto estos fue ha hasta hay la las le les lo los mas me mi mis muy no nos o otra otro para pero por porque que quien se sea segun ser si sin sobre su sus tambien te tiene todo tu un una uno unos y ya the and for with from that this you your our are will have has can able must years year experience experiencia trabajo trabajar buscamos requisitos funciones cargo empresa perfil persona deseable conocimiento conocimientos manejo nivel minimo años ano anos area areas equipo responsabilidades ofrecemos candidato candidata estudiante estudiantes profesional practicante practica pasantia sera seran debe deberá contar tener our we an of to in on as or be is at by it its who what about within across including include etc otros otras cada parte mediante asi donde cuales tales hacia muy bien nuevo nueva nuevos nuevas mejor gran grandes vacante oferta aplicar aplica job role team work strong skills skill knowledge using use based apoyar apoyo bajo ingenieria ingeniero ingeniera biomedica biomedico mecanica mecanico dispositivos dispositivo medicos medico electronica sistemas industrial carrera carreras afines afin titulo semestre semestres intermedio avanzado basico deseable minimo horas tiempo completo medio lugar bogota colombia salario contrato engineering engineer biomedical mechanical degree student students intern internship preferred required plus').split(/\s+/));
+  const ROLES = [
+    {id:'id', name:'I+D de dispositivos médicos', kw:['solidworks','cad','prototipo','prototype','iso 13485','diseno','design','verificacion','verification','validacion','validation','impresion 3d','3d printing','ansys','elementos finitos','fea','requisitos','requirements','pruebas','testing','manufactura','manufacturing','biomateriales','cateter','dispositivo medico','medical device','design control','iso 14971','riesgo','matlab','arduino','pcb']},
+    {id:'qa', name:'Calidad y asuntos regulatorios', kw:['iso 13485','iso 14971','invima','fda','capa','auditoria','audit','documentacion','gmp','bpm','regulatorio','regulatory','calidad','quality','registro sanitario','validacion','sop','trazabilidad','no conformidad','21 cfr','mdr','tecnovigilancia','riesgo']},
+    {id:'data', name:'Datos e IA en salud', kw:['python','sql',' r ','machine learning','aprendizaje automatico','deep learning','pandas','scikit-learn','tensorflow','pytorch','estadistica','statistics','visualizacion','power bi','tableau','etl','git','modelos','nlp','imagenes medicas','medical imaging','bioinformatica','dashboard','ia ','inteligencia artificial']},
+    {id:'clin', name:'Ingeniería clínica y hospitalaria', kw:['mantenimiento','maintenance','equipos biomedicos','gestion de tecnologia','metrologia','calibracion','inventario','hospital','clinica','capacitacion','tecnovigilancia','invima','soporte tecnico','electrofisiologia','instalacion','normativa','ingenieria clinica','clinical engineering','field']},
+    {id:'inv', name:'Investigación y biología computacional', kw:['investigacion','research','laboratorio','publicacion','articulo','paper','cultivos celulares','cell culture','pcr','secuenciacion','bioinformatica','python',' r ','estadistica','protocolo','analisis de datos','genomica','marcadores','poster','congreso','biologia computacional']},
+    {id:'emp', name:'Emprendimiento e innovación', kw:['prototipo','biodesign','validacion con usuarios','mvp','design thinking','emprendimiento','startup','pitch','modelo de negocio','lean','entrevistas','necesidades clinicas','gestion de proyectos','project management','propiedad intelectual','innovacion','semillero','bitt']}
+  ];
+  const GENERAL = ['excel','power bi','tableau','python','sql',' r ','matlab','java','javascript','html','git','solidworks','autocad','fusion 360','inventor','ansys','arduino','raspberry','impresion 3d','corte laser','labview','sap','salesforce','hubspot','google analytics','canva','figma','adobe','photoshop','illustrator','office','word','powerpoint','google workspace','notion','jira','trello','scrum','agile','lean','six sigma','design thinking','gestion de proyectos','project management','pmp','ingles','english','frances','aleman','portugues','b2','c1','toefl','ielts','estadistica','spss','stata','machine learning','docker','aws','azure','linux','contabilidad','finanzas','marketing','ventas','servicio al cliente','investigacion','redaccion','fotografia','edicion de video'];
+  const SECTIONS = [
+    {k:'Experiencia', re:/\b(experiencia|experience|practicas?|pasantias?)\b/},
+    {k:'Educación', re:/\b(educacion|education|formacion academica)\b/},
+    {k:'Habilidades', re:/\b(habilidades|skills|aptitudes|competencias|herramientas)\b/},
+    {k:'Proyectos', re:/\b(proyectos|projects)\b/},
+    {k:'Idiomas', re:/\b(idiomas|languages|ingles|english)\b/},
+  ];
+
+  const lines = t => (t||'').split(/\r?\n/).map(l=>l.trim()).filter(Boolean);
+  const stripBullet = l => l.replace(/^[\-•●▪◦*·•▪►>–—\d\.\)\s]+/,'').trim();
+  const firstWord = l => norm(stripBullet(l)).split(/[\s,:;]+/)[0]||'';
+  const isStrong = l => { const w=firstWord(l); return w.length>2 && STRONG.some(s=>w.startsWith(s)); };
+  const isWeak = l => { const n=norm(stripBullet(l)); return WEAK.some(s=>n.startsWith(s)); };
+  const yearRe = /^(19|20)\d{2}$/;
+  function hasMetric(l){
+    const n=norm(l);
+    if(/%|\$|\busd\b|\bcop\b|\bx\d|\d+x\b|\bk\b|millones|mil\b/.test(n) && /\d/.test(n)) return true;
+    const nums=(n.match(/\d+(?:[.,]\d+)?/g)||[]).filter(x=>!yearRe.test(x) && !(x.length>=7));
+    // descarta rangos de fecha tipo 01/2024 o "ene 2023"
+    const cleaned = n.replace(/\b\d{1,2}\/(19|20)\d{2}\b/g,'');
+    const nums2=(cleaned.match(/\d+(?:[.,]\d+)?/g)||[]).filter(x=>!yearRe.test(x) && x.length<7);
+    return nums.length>0 && nums2.length>0;
+  }
+  // líneas que describen logros/actividades (no títulos, no fechas sueltas)
+  // une las líneas que el PDF partió a la mitad de una frase
+  function mergeWrapped(L){
+    const out=[];
+    L.forEach(l=>{
+      const prev=out[out.length-1];
+      const startsBullet=/^[\-•●▪◦*·►–—]/.test(l);
+      const startsLower=/^[a-záéíóúñü(]/.test(l);
+      const isDate = /\b(19|20)\d{2}\b/.test(l) && /(\(\d+ (años?|meses?|years?|months?)|actualidad|present|\b(19|20)\d{2}\s*[-–]\s*)/i.test(l);
+      const prevOpen = prev && !isDate && !/[.:;!?)]$/.test(prev) && (prev.length>70 || /^[\-•●▪◦*·►–—]/.test(prev));
+      if(prev && !startsBullet && (startsLower || prevOpen) && !/^(page|p[aá]gina)\s+\d/i.test(l)) out[out.length-1]=prev+' '+l;
+      else out.push(l);
+    });
+    return out.filter(l=>!/^(page|p[aá]gina)\s+\d+\s+(of|de)\s+\d+$/i.test(l));
+  }
+  function bulletLines(t){
+    const L=mergeWrapped(lines(t));
+    const headerEnd = L.slice(0,5).some(l=>/@/.test(l)) ? L.findIndex(l=>/@/.test(l))+1 : 0;
+    return L.filter((l,i)=>{
+      if(i<headerEnd) return false;
+      const s=stripBullet(l);
+      if(s.length<28) return false;
+      const words=s.split(/\s+/).length, commas=(s.match(/,/g)||[]).length;
+      if(/\b(19|20)\d{2}\b/.test(s) && words<14) return false;          // títulos de cargo/educación con fechas
+      if(words<=6) return false;                                          // ciudades, cargos sueltos
+      if(/\(\d+ (años?|meses?|years?|months?)/i.test(s) && words<20) return false; // rangos de fechas de LinkedIn
+      if(commas>=3 && words/(commas+1)<3) return false;                   // listas de habilidades
+      if(s===s.toUpperCase() && /[A-ZÁÉÍÓÚ]/.test(s)) return false;       // encabezados en mayúscula
+      if(/@|https?:|linkedin\.com|github\.com|\+?\d[\d\s\-]{8,}/.test(s)) return false;
+      return true;
+    });
+  }
+  function cliches(t){
+    const out=[];
+    const sentences=(t||'').split(/(?<=[.!?\n])/);
+    sentences.forEach(s=>{
+      const n=norm(s);
+      CLICHES.forEach(c=>{
+        const re=new RegExp('\\b'+c,'i');
+        const m=n.match(re);
+        if(m){
+          const cm=(s.match(/,/g)||[]).length, wd=s.trim().split(/\s+/).length;
+          const isList = cm>=3 && wd/(cm+1)<3;
+          const evidence = !isList && wd>=8 && hasMetric(s.replace(/\b\d+d\b/gi,'')) || /\b(lider|coordin|logr|led|managed|diseñ|disen|desarroll)\w*\b.*\b(\d|equipo de \d)/.test(n);
+          out.push({term:pretty(m[0].trim(), s), sentence:s.trim().slice(0,160), evidence});
+        }
+      });
+    });
+    // un término por oración
+    const seen=new Set(); return out.filter(o=>{const k=o.term+'|'+o.sentence; if(seen.has(k))return false; seen.add(k); return true;});
+  }
+  // normaliza carácter por carácter para que los índices coincidan con el texto original
+  const normAligned = s => [...(s||'')].map(ch=>{const x=norm(ch); return x.length===1?x:ch.toLowerCase().slice(0,1)||' ';}).join('');
+  function pretty(k, src){
+    const orig=[...(src||'')]; const n=normAligned(src);
+    const re=new RegExp('(^|[^a-z0-9])('+k.trim().replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','');
+    const m=n.match(re); if(!m) return k.trim();
+    let a=m.index+m[1].length, b=a+m[2].length;
+    while(b<orig.length && /[\p{L}\d]/u.test(orig[b])) b++;
+    return orig.slice(a,b).join('');
+  }
+  function vacancyKeywords(v){
+    const n=' '+norm(v)+' ';
+    const set=new Map();
+    const wb=k=>new RegExp('(^|[^a-z0-9])'+k.trim().replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'([^a-z0-9]|$)').test(n);
+    const roleHits=[...new Set(ROLES.flatMap(r=>r.kw.map(k=>k.trim())))].filter(wb);
+    roleHits.filter(k=>!roleHits.some(o=>o!==k && o.includes(k))).forEach(k=>set.set(k,99));
+    const toks=n.replace(/[^a-z0-9+#\-\s]/g,' ').split(/\s+/).filter(w=>w.length>3 && !STOP.has(w) && !/^\d+$/.test(w));
+    const freq={}; toks.forEach(w=>freq[w]=(freq[w]||0)+1);
+    Object.entries(freq).sort((a,b)=>b[1]-a[1]).forEach(([w,c])=>{ if(![...set.keys()].some(k=>k.includes(w))) set.set(w,c); });
+    return [...set.keys()].slice(0,24);
+  }
+  function keywordMatch(text, kws){
+    const n=' '+norm(text).replace(/[^a-z0-9+#\-\s]/g,' ').replace(/\s+/g,' ')+' ';
+    const found=[], missing=[];
+    kws.forEach(k=>{ const kk=k.trim(); const esc=kk.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+      const re = kk.length<=3 ? new RegExp(' '+esc+'(?=[^a-z0-9+#])') : new RegExp(' '+esc);
+      (re.test(n) ? found : missing).push(kk); });
+    return {found, missing, ratio: kws.length? found.length/kws.length : 0};
+  }
+  function roleFit(text){
+    return ROLES.map(r=>{const m=keywordMatch(text,r.kw); return {id:r.id,name:r.name,pct:Math.round(Math.min(1,m.ratio/0.45)*100),found:m.found};})
+      .sort((a,b)=>b.pct-a.pct);
+  }
+  const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
+  const rewriteHint = l => {
+    const s=stripBullet(l);
+    if(isWeak(l)) return 'Cambia el verbo débil por uno que diga qué hiciste tú (diseñé, construí, lideré, analicé) y agrega el resultado.';
+    if(!isStrong(l) && !hasMetric(l)) return 'Empieza con un verbo de acción y termina con un número: cuántos, cuánto, en cuánto tiempo, qué porcentaje.';
+    if(!isStrong(l)) return 'Empieza la línea con un verbo de acción en pasado (desarrollé, validé, reduje).';
+    return 'Agrega una cifra que muestre el impacto: usuarios, %, tiempo ahorrado, muestras, premios.';
+  };
+
+  function common(text, expText, vacante, roleId){
+    const bl=bulletLines(expText);
+    const strong=bl.filter(isStrong), weak=bl.filter(isWeak), metric=bl.filter(hasMetric);
+    const vRatio = bl.length? strong.length/bl.length : 0;
+    const mRatio = bl.length? metric.length/bl.length : 0;
+    let kws, kwSource;
+    if(roleId==='general'){ kws=GENERAL.map(k=>k.trim()); kwSource='general'; }
+    else { const r=ROLES.find(r=>r.id===roleId)||ROLES[0]; kws=r.kw.map(k=>k.trim()); kwSource=r.name; }
+    const km=keywordMatch(text,kws);
+    if(kwSource==='general'){ km.ratio = Math.min(1, km.found.length/8)*0.6; km.missing=[]; }
+    km.found=km.found.map(k=>pretty(k,text)); km.missing=km.missing.map(k=>pretty(k,text));
+    let vac=null;
+    if((vacante||'').trim().length>40){
+      const vk=vacancyKeywords(vacante); const vm=keywordMatch(text,vk);
+      const src=vacante+'\n'+text;
+      vac={kws:vk, ratio:vm.ratio, found:vm.found.map(k=>pretty(k,src)), missing:vm.missing.map(k=>pretty(k,src))};
+    }
+    const cl=cliches(text);
+    const toRewrite = bl.filter(l=>!(isStrong(l)&&hasMetric(l))).sort((a,b)=>(isWeak(b)?1:0)-(isWeak(a)?1:0)).slice(0,5).map(l=>({line:stripBullet(l).slice(0,180), hint:rewriteHint(l)}));
+    const kwLabel = kwSource==='vacante'?'Palabras clave de la vacante': kwSource==='general'?'Herramientas y habilidades concretas':'Palabras clave del puesto';
+    const kwDetail = kwSource==='general' ? `${km.found.length} herramientas o habilidades concretas detectadas (ideal 8 o más)` : `${km.found.length} de ${kws.length} coinciden (${kwSource==='vacante'?'vacante pegada':kwSource})`;
+    const kwRec = kwSource==='general'
+      ? {t:'Nombra tus herramientas concretas', d:'Los filtros buscan nombres concretos: programas (Excel, Python, SolidWorks…), idiomas con nivel, certificaciones y metodologías. Pon en Habilidades las que de verdad manejas y menciónalas dentro de tus logros.'}
+      : {t: kwSource==='vacante'?'Usa las palabras de la vacante':'Agrega las palabras clave del área', d:`Faltan: ${km.missing.slice(0,8).join(', ')}. Inclúyelas solo si son ciertas, idealmente dentro de una viñeta de experiencia y repetidas en Habilidades o Aptitudes.`};
+    return {bl,strong,weak,metric,vRatio,mRatio,kws,kwSource,km,cl,toRewrite,fit:roleFit(text),kwLabel,kwDetail,kwRec,vac};
+  }
+
+  function auditCV({cv, vacante, roleId}){
+    const c=common(cv, cv, vacante, roleId);
+    const n=norm(cv);
+    const words=(cv.match(/\S+/g)||[]).length;
+    const secs=SECTIONS.map(s=>({k:s.k, ok:s.re.test(n)}));
+    const email=/[\w.+-]+@[\w-]+\.[\w.]+/.test(cv);
+    const link=/linkedin\.com|github\.com|https?:\/\//i.test(cv);
+    const phone=/\+?\d[\d\s\-]{8,}/.test(cv);
+    const vague=c.cl.filter(x=>!x.evidence);
+    const crit=[
+      {key:'verbos', label:'Verbos de acción', max:20, score: Math.round(20*clamp(c.vRatio/0.7,0,1) - Math.min(6,c.weak.length*2)),
+        detail:`${c.strong.length} de ${c.bl.length} líneas empiezan con un verbo de acción${c.weak.length?` · ${c.weak.length} con verbo débil`:''}`},
+      {key:'metricas', label:'Logros con números', max:20, score: Math.round(20*clamp(c.mRatio/0.45,0,1)),
+        detail:`${c.metric.length} de ${c.bl.length} líneas tienen una cifra`},
+      {key:'keywords', label: c.kwLabel, max:20, score: Math.round(20*clamp(c.km.ratio/0.6,0,1)), detail: c.kwDetail},
+      {key:'cliches', label:'Sin frases vacías', max:15, score: clamp(15-vague.length*3,0,15),
+        detail: vague.length? `${vague.length} frase(s) genérica(s) sin evidencia` : 'No encontré frases vacías sin respaldo'},
+      {key:'estructura', label:'Estructura legible por ATS', max:15, score: Math.round(secs.filter(s=>s.ok).length*2 + (email?2.5:0) + ((link||phone)?2.5:0)),
+        detail:`Secciones: ${secs.filter(s=>s.ok).map(s=>s.k).join(', ')||'ninguna detectada'}`},
+      {key:'longitud', label:'Extensión', max:10, score: words>=300&&words<=800?10:(words>=180&&words<300)||(words>800&&words<=1100)?6:2,
+        detail:`${words} palabras (ideal 300–800, una página para pregrado)`}
+    ];
+    crit.forEach(k=>k.score=clamp(k.score,0,k.max));
+    const recs=[];
+    if(crit[0].score<crit[0].max) recs.push({pts:crit[0].max-crit[0].score, t:'Empieza cada viñeta con un verbo de acción', d:`Solo ${Math.round(c.vRatio*100)}% de tus viñetas arranca con verbo fuerte. Un filtro ATS y un reclutador leen los primeros 3 o 4 palabras. Cambia "Participé en…" o "Encargada de…" por "Diseñé", "Construí", "Lideré", "Analicé".`});
+    if(crit[1].score<crit[1].max) recs.push({pts:crit[1].max-crit[1].score, t:'Pon números a tus logros', d:'Usa la fórmula: verbo + qué hiciste + cómo + resultado medible. Ejemplo: "Construí un prototipo de oxímetro con Arduino que midió SpO₂ con error < 3 % frente a un equipo comercial en 20 voluntarios".'});
+    if(crit[2].score<crit[2].max) recs.push({pts:crit[2].max-crit[2].score, ...c.kwRec});
+    if(vague.length) recs.push({pts:crit[3].max-crit[3].score, t:'Cambia adjetivos por evidencia', d:`Escribiste "${vague.slice(0,3).map(v=>v.term).join('", "')}" sin prueba. En vez de decir que eres "proactiva", cuenta la vez que propusiste algo y qué pasó.`});
+    const missingSecs=secs.filter(s=>!s.ok).map(s=>s.k);
+    if(crit[4].score<crit[4].max) recs.push({pts:crit[4].max-crit[4].score, t:'Completa la estructura', d:`${missingSecs.length?`Agrega título claro para: ${missingSecs.join(', ')}. `:''}${!email?'Falta un correo. ':''}${!(link||phone)?'Agrega teléfono y link a LinkedIn o GitHub. ':''}Usa títulos estándar ("Experiencia", "Educación") para que el ATS los reconozca.`});
+    if(crit[5].score<crit[5].max) recs.push({pts:crit[5].max-crit[5].score, t: words<300?'Tu CV se queda corto':'Recorta tu CV', d: words<300?'Agrega proyectos de clase, semilleros, monitorías o voluntariados con resultados. Para pregrado eso cuenta como experiencia.':'Deja lo más relevante para el puesto y quita tareas obvias. Una página basta en pregrado.'});
+    return finish(crit, recs, c, {secs, words});
+  }
+
+  function auditLinkedIn({titular, acerca, experiencia, url, vacante, roleId}){
+    const all=[titular,acerca,experiencia].join('\n');
+    const c=common(all, experiencia, vacante, roleId);
+    const tl=(titular||'').trim().length;
+    const tn=norm(titular);
+    const hasSep=/[|·•\/,]/.test(titular||'');
+    const tk=keywordMatch(titular||'', c.kws).found.length;
+    let tScore = tl===0?0: tl<40?6: tl<70?12: tl<=220?16:8;
+    if(tl>=40 && tl<=220 && (hasSep || tk>=2)) tScore+=4;
+    if(/^(estudiante|student)\b/.test(tn) && tk<1 && !hasSep) tScore-=4;
+    const al=(acerca||'').trim().length;
+    let aScore = al===0?0: al<300?5: al<800?12: al<=2600?17:12;
+    const firstPerson=/\b(soy|me |mi |mis |he |i am|i'm|my )/.test(' '+norm(acerca)+' ');
+    const cta=/(contact|escrib|hablemos|conversemos|reach out|email|correo|@)/.test(norm(acerca));
+    if(al>0 && firstPerson) aScore+=2; if(al>0 && cta) aScore+=1;
+    const u=(url||'').trim();
+    const slug=(u.match(/linkedin\.com\/in\/([^\/?#\s]+)/i)||[])[1]||'';
+    const uScore = !u?0 : !slug?1 : /\d{3,}|-[a-z0-9]{6,}$/i.test(slug)?2:5;
+    const vague=c.cl.filter(x=>!x.evidence);
+    const crit=[
+      {key:'titular', label:'Titular', max:20, score:tScore, detail:`${tl} caracteres (ideal 70–220, LinkedIn corta en 220)`},
+      {key:'acerca', label:'Acerca de', max:20, score:aScore, detail: al? `${al} caracteres${firstPerson?' · en primera persona':''}${cta?' · invita a contactar':''}` : 'Vacío'},
+      {key:'verbos', label:'Verbos de acción en experiencia', max:15, score: Math.round(15*clamp(c.vRatio/0.7,0,1) - Math.min(4,c.weak.length*2)), detail:`${c.strong.length} de ${c.bl.length} descripciones empiezan con verbo de acción`},
+      {key:'metricas', label:'Logros con números', max:15, score: Math.round(15*clamp(c.mRatio/0.45,0,1)), detail:`${c.metric.length} de ${c.bl.length} descripciones tienen una cifra`},
+      {key:'keywords', label: c.kwLabel, max:15, score: Math.round(15*clamp(c.km.ratio/0.6,0,1)), detail: c.kwDetail},
+      {key:'cliches', label:'Sin frases vacías', max:10, score: clamp(10-vague.length*2.5,0,10), detail: vague.length?`${vague.length} frase(s) genérica(s) sin evidencia`:'No encontré frases vacías sin respaldo'},
+      {key:'url', label:'URL personalizada', max:5, score:uScore, detail: !u?'No pegaste tu link': uScore===5?`linkedin.com/in/${slug}`:`linkedin.com/in/${slug} tiene números o letras al azar`}
+    ];
+    crit.forEach(k=>k.score=clamp(Math.round(k.score),0,k.max));
+    const recs=[];
+    if(crit[0].score<20) recs.push({pts:20-crit[0].score, t:'Reescribe tu titular', d: tl===0?'Está vacío. Es lo primero que ve un reclutador en la búsqueda.' : `Fórmula: Rol o carrera | 2–3 áreas o herramientas | algo que te distinga. Ejemplo: "Estudiante de Ingeniería Biomédica | Prototipado y dispositivos médicos | SolidWorks · Python | Semillero bitt".${tl>220?' Además supera 220 caracteres y LinkedIn lo corta.':''}`});
+    if(crit[1].score<20) recs.push({pts:20-crit[1].score, t:'Fortalece tu "Acerca de"', d: al===0?'No tienes "Acerca de". Escribe 3 párrafos cortos: quién eres y qué te mueve, qué has hecho con un logro concreto, y qué buscas más una forma de contactarte.' : `${al<800?'Es corto: apunta a 800–2.000 caracteres. ':''}${!firstPerson?'Escríbelo en primera persona. ':''}${!cta?'Cierra con qué buscas y cómo contactarte. ':''}Incluye palabras clave de tu área en las primeras dos líneas, que son las que se ven sin dar "ver más".`});
+    if(crit[2].score<15) recs.push({pts:15-crit[2].score, t:'Describe tu experiencia con verbos de acción', d:'Cada cargo o proyecto debe tener 2–4 líneas que arranquen con verbo: "Diseñé…", "Coordiné…", "Validé…". Un cargo sin descripción es solo un título.'});
+    if(crit[3].score<15) recs.push({pts:15-crit[3].score, t:'Cuantifica', d:'Agrega cifras: número de usuarios, muestras, prototipos, % de mejora, premios, horas de capacitación. Los números hacen que tu perfil salte en una lectura rápida.'});
+    if(crit[4].score<15) recs.push({pts:15-crit[4].score, ...c.kwRec});
+    if(vague.length) recs.push({pts:10-crit[5].score, t:'Cambia adjetivos por evidencia', d:`"${vague.slice(0,3).map(v=>v.term).join('", "')}" no dice nada sin un ejemplo. Muestra el logro y deja que el lector concluya que eres así.`});
+    if(crit[6].score<5) recs.push({pts:5-crit[6].score, t:'Personaliza tu URL', d:'En tu perfil: "Editar perfil público y URL" → "Editar tu URL personalizada". Usa nombre-apellido, sin números. Queda más limpio en el CV.'});
+    return finish(crit, recs, c, {});
+  }
+
+  function finish(crit, recs, c, extra){
+    const total=Math.round(crit.reduce((a,k)=>a+k.score,0));
+    let verdict= total>=75?{k:'pasa',t:'Pasa el filtro',d:'Un ATS lo dejaría pasar a revisión humana.'}: total>=55?{k:'duda',t:'En la cuerda floja',d:'Podría pasar, pero compite en desventaja.'}:{k:'descarte',t:'Probable descarte',d:'Un filtro automático lo dejaría por fuera antes de que una persona lo lea.'};
+    // Encaje con la vacante: aparte del puntaje general
+    let vacFit=null;
+    if(c.vac){
+      const r=c.vac.ratio, pct=Math.round(Math.min(1,r/0.6)*100), doc=extra.secs?'CV':'perfil';
+      if(r>=0.6) vacFit={k:'pasa',pct,t:'Probablemente pasas el primer filtro',
+        d:`Tu ${doc} menciona ${c.vac.found.length} de las ${c.vac.kws.length} cosas que pide la oferta. Un filtro automático te dejaría pasar a revisión humana${total<55?', aunque conviene mejorar cómo está escrito para que la persona que lo lea se quede contigo':''}.`};
+      else if(r>=0.35) vacFit={k:'duda',pct,t:'Encajas a medias',
+        d:`Te faltan varias cosas que pide la oferta (${c.vac.missing.slice(0,5).join(', ')}). Si las tienes, escríbelas tal cual las nombra la vacante. Si no, puedes aplicar, pero con expectativas realistas.`};
+      else vacFit={k:'no',pct,t:'Por ahora no cumples con lo que piden',
+        d:`De ${c.vac.kws.length} cosas que menciona la oferta, en tu ${doc} solo aparecen ${c.vac.found.length}. Si de verdad no tienes ${c.vac.missing.slice(0,4).join(', ')}, lo más probable es que el filtro te descarte, aunque tu ${doc} esté muy bien escrito. No es un juicio sobre ti: esta vacante todavía no es para ti. Mira abajo los puestos donde ya encajas.`};
+    }
+    recs.sort((a,b)=>b.pts-a.pts);
+    return {total, verdict, crit, recs, vacFit, ...c, ...extra};
+  }
+
+  return {auditCV, auditLinkedIn, ROLES};
+})();
+</script>
+
+<script type="text/babel" data-presets="react">
+const {useState, useMemo, useEffect, useRef} = React;
+const LOGO = "data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8yIiBkYXRhLW5hbWU9IkNhcGEgMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTM3OCA0MjMuNTQiPgogIDxkZWZzPgogICAgPHN0eWxlPgogICAgICAuY2xzLTEgewogICAgICAgIGZpbGw6ICMxMTNjYmI7CiAgICAgIH0KICAgIDwvc3R5bGU+CiAgPC9kZWZzPgogIDxnIGlkPSJDYXBhXzEtMiIgZGF0YS1uYW1lPSJDYXBhIDEiPgogICAgPGc+CiAgICAgIDxnPgogICAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTMyNS45NSw0MS45M2wtMTkuNTgsMTYuNDNjLTIuNzMsMi4yOS02LjU4LDIuNjItOS42Ny44Ni0xNi43MS05LjQ2LTM1LjAxLTE2LjIyLTU0LjIzLTE5Ljc5LTMuNDktLjY1LTYuMjMtMy4zOC02Ljg1LTYuODhsLTQuNDQtMjUuMTZjLS42OC0zLjg2LTMuOTEtNi43OC03LjgyLTcuMDEtMTYuMjYtLjk4LTMyLjktLjEtNDkuNjUsMi44Ni0xNi43NSwyLjk1LTMyLjY4LDcuODEtNDcuNjMsMTQuMy0zLjYsMS41Ni01LjY0LDUuNDEtNC45NSw5LjI3bDQuNDQsMjUuMTZjLjYyLDMuNS0xLjAyLDctNC4wOCw4LjgtMTYuODQsOS45My0zMS43MywyMi41NC00NC4yLDM3LjE0LTIuMzEsMi43MS02LjA0LDMuNzEtOS4zOSwyLjVsLTI0LjAyLTguNzRjLTMuNjgtMS4zNC03LjgyLDAtOS45OCwzLjI3QzE1LjcxLDEyMi40MSwzLjg4LDE1NC4xMy4wNSwxODcuNzRjLS40NCwzLjksMS44Niw3LjU5LDUuNTUsOC45M2wyNC4wNCw4Ljc1YzMuMzQsMS4yMiw1LjU1LDQuMzgsNS41OCw3LjkzLjEsOS41Mi45NywxOS4xNiwyLjY4LDI4Ljg1LDEuNzEsOS42OSw0LjE5LDE5LjA0LDcuMzUsMjguMDIsMS4xOCwzLjM1LjE5LDcuMDgtMi41Myw5LjM3bC0xOS42LDE2LjQ1Yy0zLDIuNTItMy45MSw2Ljc4LTIuMTYsMTAuMjksMTUuMDksMzAuMjgsMzcuMDYsNTYuMDQsNjMuNTQsNzUuNjQsMy4xNSwyLjMzLDcuNSwyLjE3LDEwLjUtLjM0bDE5LjU4LTE2LjQzYzIuNzMtMi4yOSw2LjU4LTIuNjIsOS42Ny0uODYsMTYuNzEsOS40NiwzNS4wMSwxNi4yMiw1NC4yMywxOS43OSwzLjQ5LjY1LDYuMjMsMy4zOCw2Ljg1LDYuODhsNC40NCwyNS4xNmMuNjgsMy44NiwzLjkxLDYuNzgsNy44Miw3LjAxLDE2LjI2Ljk4LDMyLjkuMSw0OS42NS0yLjg2LDE2Ljc1LTIuOTUsMzIuNjgtNy44MSw0Ny42My0xNC4zLDMuNi0xLjU2LDUuNjQtNS40MSw0Ljk1LTkuMjdsLTQuNDQtMjUuMTZjLS42Mi0zLjUsMS4wMi03LDQuMDgtOC44LDE2Ljg0LTkuOTMsMzEuNzMtMjIuNTQsNDQuMi0zNy4xNCwyLjMxLTIuNzEsNi4wNC0zLjcxLDkuMzktMi41bDI0LjAyLDguNzRjMy42OCwxLjM0LDcuODIsMCw5Ljk4LTMuMjcsMTguMTktMjcuNDgsMzAuMDItNTkuMiwzMy44NC05Mi44MS40NC0zLjktMS44Ni03LjU5LTUuNTUtOC45M2wtMjQuMDQtOC43NWMtMy4zNC0xLjIyLTUuNTUtNC4zOC01LjU4LTcuOTMtLjEtOS41Mi0uOTctMTkuMTYtMi42OC0yOC44NS0xLjcxLTkuNjktNC4xOS0xOS4wNC03LjM1LTI4LjAyLTEuMTgtMy4zNS0uMTktNy4wOCwyLjUzLTkuMzdsMTkuNi0xNi40NWMzLTIuNTIsMy45MS02Ljc4LDIuMTYtMTAuMjktMTUuMDktMzAuMjctMzcuMDYtNTYuMDQtNjMuNTQtNzUuNjQtMy4xNS0yLjMzLTcuNS0yLjE3LTEwLjUuMzRabTE4LjkxLDE1OS4yOWMzLjE4LDM5Ljk0LTExLjYyLDc3LjktMzguMjIsMTA1LjAyLTYuMDMsNi4xNS0xMi42NiwxMS43NC0xOS44MywxNi42Ny0xNS40MiwxMC42LTMzLjMsMTguMTYtNTIuOTMsMjEuNjItMTkuNjMsMy40Ni0zOS4wMiwyLjQ4LTU3LjEzLTIuMjEtOC40Mi0yLjE4LTE2LjU3LTUuMTYtMjQuMzMtOC44OC0zNC4yNy0xNi4zOS02MS4xNy00Ny03MS44My04NS42Mi0xLjE0LTQuMTItMi4xLTguMzQtMi44Ni0xMi42NC0uNzYtNC4zLTEuMy04LjU5LTEuNjQtMTIuODUtMy4xOC0zOS45NCwxMS42Mi03Ny45LDM4LjIyLTEwNS4wMiw2LjAzLTYuMTUsMTIuNjYtMTEuNzQsMTkuODMtMTYuNjcsMTUuNDItMTAuNiwzMy4zLTE4LjE2LDUyLjkzLTIxLjYyLDE5LjYzLTMuNDYsMzkuMDItMi40OCw1Ny4xMywyLjIxLDguNDIsMi4xOCwxNi41Nyw1LjE2LDI0LjMzLDguODgsMzQuMjcsMTYuMzksNjEuMTYsNDcsNzEuODMsODUuNjIsMS4xNCw0LjEyLDIuMSw4LjM0LDIuODYsMTIuNjQuNzYsNC4zLDEuMyw4LjU5LDEuNjQsMTIuODVaIi8+CiAgICAgICAgPGc+CiAgICAgICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Im0yMDAuMzMsMTk1LjI2bDEzLjE5LTMyLjg2YzIuMDMtNS4wNyw3Ljg1LTcuNDUsMTIuODYtNS4yOGw4MS44NCwzNS41NGM0LjcsMi4wNCw3LDcuMzksNS4yNSwxMi4yMWwtNDEuNzQsMTE0LjYyYy0xLjU4LDQuMzMtNy43NCw0LjIyLTkuMTYtLjE3bC0yNC43Ny03Ni41NGMtLjcxLTIuMTgtMi4xNy00LjA1LTQuMTItNS4yNmwtOS4zNi01Ljc5Yy0uOTEtLjU3LTEuNzMtMS4yOC0yLjQxLTIuMTJsLTIwLjA4LTI0LjYyYy0yLjIzLTIuNzMtMi44LTYuNDYtMS40OC05Ljc0WiIvPgogICAgICAgICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJtMTg0LjksMTYwLjg5bDguMDksNy45OWMuOTMuOTIsMi4yMywxLjM1LDMuNTIsMS4xNmw0LjU3LS42NGMxLjk1LS4yNywzLjI3Ljg3LDQuNzUsMS45NC41My4zOSwxLjE2LjY2LDEuNzMuMjEuNTItLjQxLjYzLTEuMjQuMi0xLjc1LTEuMjYtMS41LTIuOTEtNS4yMS01LjI3LTQuODdsLTQuMTguNTljLS45LjEzLTEuNzQtLjUtMS44Ni0xLjRsLS42Mi00LjQyLTEuMzEtOS4zMWMtLjEzLS45LS45Ni0xLjUzLTEuODYtMS40bC05LjMsMS4zMWMtLjkuMTMtMS43NC0uNS0xLjg2LTEuNGwtMS40Ni0xMC40MWMtLjE1LTEuMDgtMS4zLTEuNzItMi4zLTEuMjhsLTEwLjMyLDQuNTNjLTEsLjQ0LTIuMTUtLjItMi4zLTEuMjhsLTEuNzMtMTIuMjljLS4yNC0xLjctMS40NC0zLjEtMy4wOC0zLjZsLTI4LjAxLTguNTFjLTMuNzMtMS4xMy02Ljg1LDMuMDEtNC43Miw2LjI4bDE2LjYzLDI1LjYzYzEuMjcsMS45NSwzLjI2LDMuMzIsNS41MywzLjgxbDMwLjQsNi41NGMxLjguMzksMy40NiwxLjI4LDQuNzcsMi41OFoiLz4KICAgICAgICA8L2c+CiAgICAgIDwvZz4KICAgICAgPGc+CiAgICAgICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJtODY0Ljk5LDQwNy44NlYxNTAuNDRjMC01LjAzLDQuMDgtOS4xMiw5LjEyLTkuMTJoNDcuMzljNS4wMywwLDkuMTIsNC4wOCw5LjEyLDkuMTJ2MjU3LjQyYzAsNS4wMy00LjA4LDkuMTItOS4xMiw5LjEyaC00Ny4zOWMtNS4wMywwLTkuMTItNC4wOC05LjEyLTkuMTJabTAtMzAwLjAydi00Ny4zOWMwLTUuMDMsNC4wOC05LjEyLDkuMTItOS4xMmg0Ny4zOWM1LjAzLDAsOS4xMiw0LjA4LDkuMTIsOS4xMnY0Ny4zOWMwLDUuMDMtNC4wOCw5LjEyLTkuMTIsOS4xMmgtNDcuMzljLTUuMDMsMC05LjEyLTQuMDgtOS4xMi05LjEyWiIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTY4MC4xMiw0MjMuNTRjLTE0LjU5LDAtMjcuNzEtMS45MS0zOS4zNy01Ljc0LTExLjY4LTMuODMtMjEuODgtOS4xMi0zMC42My0xNS44Ni01Ljk4LTQuNjEtMTEuMjctOS42OC0xNS44OS0xNS4yMi0yLjQ0LTIuOTMtNy4xOC0xLjY0LTcuODcsMi4xMmwtMy44NCwyMC43Yy0uOCw0LjMyLTQuNTcsNy40NS04Ljk2LDcuNDVoLTQxLjgzYy01LjAzLDAtOS4xMi00LjA4LTkuMTItOS4xMlYzMi4zYzAtNS4wMyw0LjA4LTkuMTIsOS4xMi05LjEyaDQ3LjRjNS4wMywwLDkuMTIsNC4wOCw5LjEyLDkuMTJ2MTM1LjkyYzAsNC4yNiw1LjIzLDYuMTEsOCwyLjg4LDcuNTctOC44MywxNi43NS0xNi40OCwyNy41NS0yMi45MywxNC45NS04Ljk0LDMzLjU0LTEzLjQxLDU1Ljc5LTEzLjQxLDI1Ljg5LDAsNDguNzYsNi4yOSw2OC42MywxOC44NywxOS44NywxMi41OSwzNS41NSwyOS43Miw0Ny4wNCw1MS40MiwxMS40OSwyMS42OSwxNy4yMyw0Ni41NywxNy4yMyw3NC42NXMtNS42Niw1MS45Ni0xNi45Niw3My44M2MtMTEuMzEsMjEuODgtMjYuODksMzkuMDMtNDYuNzYsNTEuNDItMTkuODgsMTIuMzktNDIuNzYsMTguNi02OC42NCwxOC42Wm0tMTMuNjctNTYuODhjMTUuMzIsMCwyOC45OS0zLjczLDQxLjAyLTExLjIxLDEyLjA0LTcuNDgsMjEuNDItMTcuNjgsMjguMTctMzAuNjMsNi43NS0xMi45MywxMC4xMi0yOC4xNywxMC4xMi00NS42OHMtMy4zNy0zMi4yNi0xMC4xMi00NS4zOWMtNi43NS0xMy4xMy0xNi4xMy0yMy4zMy0yOC4xNy0zMC42My0xMi4wMy03LjI4LTI1LjctMTAuOTMtNDEuMDItMTAuOTNzLTI5LjQ1LDMuNjUtNDEuMywxMC45M2MtMTEuODUsNy4zLTIxLjE1LDE3LjUtMjcuODksMzAuNjMtNi43NSwxMy4xMy0xMC4xMiwyOC4yNi0xMC4xMiw0NS4zOXMzLjM3LDMyLjc0LDEwLjEyLDQ1LjY4YzYuNzQsMTIuOTUsMTYuMDQsMjMuMTUsMjcuODksMzAuNjMsMTEuODUsNy40OCwyNS42MiwxMS4yMSw0MS4zLDExLjIxWiIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTExMTIuNzQsNDE2Ljk4Yy0xOC42LDAtMzQuNzMtMi45Mi00OC40MS04Ljc2LTEzLjY3LTUuODItMjQuMzQtMTUuNDktMzEuOTktMjguOTgtNy42Ni0xMy40OC0xMS40OC0zMS43My0xMS40OC01NC42OXYtMTIzLjQyYzAtMi41Mi0yLjA0LTQuNTYtNC41Ni00LjU2aC0zMy4zNmMtNS4wMywwLTkuMTItNC4wOC05LjEyLTkuMTJ2LTM3YzAtNS4wMyw0LjA4LTkuMTIsOS4xMi05LjEyaDMzLjgyYzIuMzMsMCw0LjI5LTEuNzYsNC41My00LjA4bDYuMzctNjAuNWMuNDktNC42NCw0LjQtOC4xNiw5LjA3LTguMTZoNDAuNjZjNS4wMywwLDkuMTIsNC4wOCw5LjEyLDkuMTJ2NTkuMDdjMCwyLjUyLDIuMDQsNC41Niw0LjU2LDQuNTZoNjEuMjVjNS4wMywwLDkuMTIsNC4wOCw5LjEyLDkuMTJ2MzdjMCw1LjAzLTQuMDgsOS4xMi05LjEyLDkuMTJoLTYxLjI1Yy0yLjUyLDAtNC41NiwyLjA0LTQuNTYsNC41NnYxMjMuNDJjMCwxMy44NywzLjAxLDIzLjQzLDkuMDIsMjguNzIsNi4wMiw1LjI5LDE2LjE0LDcuOTIsMzAuMzYsNy45MmgyNC44YzUuMDMsMCw5LjEyLDQuMDgsOS4xMiw5LjEydjM3LjU3YzAsNS4wMy00LjA4LDkuMTItOS4xMiw5LjEyaC0zNy45MloiLz4KICAgICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Im0xMzI5LjMyLDQxNi45OGMtMTguNiwwLTM0LjczLTIuOTItNDguNDEtOC43Ni0xMy42Ny01LjgyLTI0LjM0LTE1LjQ5LTMxLjk5LTI4Ljk4LTcuNjYtMTMuNDgtMTEuNDgtMzEuNzMtMTEuNDgtNTQuNjl2LTEyMy40MmMwLTIuNTItMi4wNC00LjU2LTQuNTYtNC41NmgtMzMuMzZjLTUuMDMsMC05LjEyLTQuMDgtOS4xMi05LjEydi0zN2MwLTUuMDMsNC4wOC05LjEyLDkuMTItOS4xMmgzMy44MmMyLjMzLDAsNC4yOS0xLjc2LDQuNTMtNC4wOGw2LjM3LTYwLjVjLjQ5LTQuNjQsNC40LTguMTYsOS4wNy04LjE2aDQwLjY2YzUuMDMsMCw5LjEyLDQuMDgsOS4xMiw5LjEydjU5LjA3YzAsMi41MiwyLjA0LDQuNTYsNC41Niw0LjU2aDYxLjI1YzUuMDMsMCw5LjEyLDQuMDgsOS4xMiw5LjEydjM3YzAsNS4wMy00LjA4LDkuMTItOS4xMiw5LjEyaC02MS4yNWMtMi41MiwwLTQuNTYsMi4wNC00LjU2LDQuNTZ2MTIzLjQyYzAsMTMuODcsMy4wMSwyMy40Myw5LjAyLDI4LjcyLDYuMDIsNS4yOSwxNi4xNCw3LjkyLDMwLjM2LDcuOTJoMjQuOGM1LjAzLDAsOS4xMiw0LjA4LDkuMTIsOS4xMnYzNy41N2MwLDUuMDMtNC4wOCw5LjEyLTkuMTIsOS4xMmgtMzcuOTJaIi8+CiAgICAgIDwvZz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPg==";
+const MOSAIC = "data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8yIiBkYXRhLW5hbWU9IkNhcGEgMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmlld0JveD0iMCAwIDEwMTQuMTQgOTEzIj4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLmNscy0xIHsKICAgICAgICBjbGlwLXBhdGg6IHVybCgjY2xpcHBhdGgtMik7CiAgICAgIH0KCiAgICAgIC5jbHMtMiB7CiAgICAgICAgZmlsbDogIzI5NjRkOTsKICAgICAgfQoKICAgICAgLmNscy0zIHsKICAgICAgICBjbGlwLXBhdGg6IHVybCgjY2xpcHBhdGgtMSk7CiAgICAgIH0KCiAgICAgIC5jbHMtNCB7CiAgICAgICAgZmlsbDogIzExM2NiYjsKICAgICAgfQoKICAgICAgLmNscy01IHsKICAgICAgICBmaWxsOiAjZjFjMjUwOwogICAgICB9CgogICAgICAuY2xzLTYgewogICAgICAgIGNsaXAtcGF0aDogdXJsKCNjbGlwcGF0aCk7CiAgICAgIH0KCiAgICAgIC5jbHMtNyB7CiAgICAgICAgZmlsbDogbm9uZTsKICAgICAgfQoKICAgICAgLmNscy04IHsKICAgICAgICBjbGlwLXBhdGg6IHVybCgjY2xpcHBhdGgtMyk7CiAgICAgIH0KCiAgICAgIC5jbHMtOSB7CiAgICAgICAgZmlsbDogI2YyZTZjYzsKICAgICAgfQoKICAgICAgLmNscy0xMCB7CiAgICAgICAgZmlsbDogIzJlYmRlZjsKICAgICAgfQogICAgPC9zdHlsZT4KICAgIDxjbGlwUGF0aCBpZD0iY2xpcHBhdGgiPgogICAgICA8cmVjdCBjbGFzcz0iY2xzLTciIHg9IjMwMCIgeT0iMzciIHdpZHRoPSIyNzYiIGhlaWdodD0iMjc2Ii8+CiAgICA8L2NsaXBQYXRoPgogICAgPGNsaXBQYXRoIGlkPSJjbGlwcGF0aC0xIj4KICAgICAgPHJlY3QgY2xhc3M9ImNscy03IiB4PSI2MDAiIHk9IjM3IiB3aWR0aD0iMjc2IiBoZWlnaHQ9IjI3NiIvPgogICAgPC9jbGlwUGF0aD4KICAgIDxjbGlwUGF0aCBpZD0iY2xpcHBhdGgtMiI+CiAgICAgIDxyZWN0IGNsYXNzPSJjbHMtNyIgeD0iNTk5IiB5PSIzMzciIHdpZHRoPSIyNzYiIGhlaWdodD0iMjc2Ii8+CiAgICA8L2NsaXBQYXRoPgogICAgPGNsaXBQYXRoIGlkPSJjbGlwcGF0aC0zIj4KICAgICAgPHJlY3QgY2xhc3M9ImNscy03IiB4PSIyOTkuODEiIHk9IjYzNi45NyIgd2lkdGg9IjI3NiIgaGVpZ2h0PSIyNzYiLz4KICAgIDwvY2xpcFBhdGg+CiAgPC9kZWZzPgogIDxnIGlkPSJDYXBhXzEtMiIgZGF0YS1uYW1lPSJDYXBhIDEiPgogICAgPGc+CiAgICAgIDxyZWN0IGNsYXNzPSJjbHMtNCIgeT0iMzciIHdpZHRoPSIyNzYiIGhlaWdodD0iMjc2Ii8+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtOSIgZD0ibTE0NS41NCwyOTVjLTguNzUsMC0xNi42MS0xLjE1LTIzLjYtMy40NC03LTIuMjktMTMuMTItNS40Ni0xOC4zNi05LjUxLTMuNTgtMi43Ni02Ljc2LTUuOC05LjUzLTkuMTMtMS40Ny0xLjc2LTQuMy0uOTgtNC43MiwxLjI3bC0yLjMsMTIuNDFjLS40OCwyLjU5LTIuNzQsNC40Ny01LjM3LDQuNDdoLTI1LjA4Yy0zLjAyLDAtNS40Ni0yLjQ1LTUuNDYtNS40NlY2MC40NmMwLTMuMDIsMi40NS01LjQ2LDUuNDYtNS40NmgyOC40MmMzLjAyLDAsNS40NiwyLjQ1LDUuNDYsNS40NnY4MS40OGMwLDIuNTUsMy4xMywzLjY3LDQuOCwxLjczLDQuNTMtNS4yOSwxMC4wNC05Ljg4LDE2LjUyLTEzLjc1LDguOTYtNS4zNiwyMC4xMS04LjA0LDMzLjQ0LTguMDQsMTUuNTIsMCwyOS4yMywzLjc3LDQxLjE0LDExLjMxLDExLjkxLDcuNTUsMjEuMzEsMTcuODIsMjguMiwzMC44Miw2Ljg5LDEzLDEwLjMzLDI3LjkyLDEwLjMzLDQ0Ljc1cy0zLjM5LDMxLjE1LTEwLjE3LDQ0LjI2Yy02Ljc4LDEzLjEyLTE2LjEyLDIzLjM5LTI4LjAzLDMwLjgyLTExLjkyLDcuNDMtMjUuNjMsMTEuMTUtNDEuMTUsMTEuMTVabS04LjItMzQuMWM5LjE4LDAsMTcuMzgtMi4yNCwyNC41OS02LjcyLDcuMjEtNC40OCwxMi44NC0xMC42LDE2Ljg4LTE4LjM2LDQuMDQtNy43NSw2LjA3LTE2Ljg5LDYuMDctMjcuMzhzLTIuMDItMTkuMzQtNi4wNy0yNy4yMWMtNC4wNC03Ljg3LTkuNjctMTMuOTktMTYuODgtMTguMzYtNy4yMS00LjM3LTE1LjQxLTYuNTUtMjQuNTktNi41NXMtMTcuNjUsMi4xOS0yNC43Niw2LjU1Yy03LjEsNC4zOC0xMi42OCwxMC40OS0xNi43MiwxOC4zNi00LjA0LDcuODctNi4wNywxNi45NC02LjA3LDI3LjIxczIuMDIsMTkuNjMsNi4wNywyNy4zOGM0LjA0LDcuNzYsOS42MiwxMy44OCwxNi43MiwxOC4zNnMxNS4zNiw2LjcyLDI0Ljc2LDYuNzJaIi8+CiAgICA8L2c+CiAgICA8Zz4KICAgICAgPHJlY3QgY2xhc3M9ImNscy00IiB4PSIzMDAiIHk9IjMzNyIgd2lkdGg9IjI3NiIgaGVpZ2h0PSIyNzYiLz4KICAgICAgPHBhdGggY2xhc3M9ImNscy0xMCIgZD0ibTQxNi4wMSw1OTEuMzl2LTE3Mi40OWMwLTMuMzcsMi43My02LjExLDYuMTEtNi4xMWgzMS43NmMzLjM3LDAsNi4xMSwyLjczLDYuMTEsNi4xMXYxNzIuNDljMCwzLjM3LTIuNzMsNi4xMS02LjExLDYuMTFoLTMxLjc2Yy0zLjM3LDAtNi4xMS0yLjczLTYuMTEtNi4xMVptMC0yMDEuMDN2LTMxLjc2YzAtMy4zNywyLjczLTYuMTEsNi4xMS02LjExaDMxLjc2YzMuMzcsMCw2LjExLDIuNzMsNi4xMSw2LjExdjMxLjc2YzAsMy4zNy0yLjczLDYuMTEtNi4xMSw2LjExaC0zMS43NmMtMy4zNywwLTYuMTEtMi43My02LjExLTYuMTFaIi8+CiAgICA8L2c+CiAgICA8Zz4KICAgICAgPHJlY3QgY2xhc3M9ImNscy0xMCIgeD0iNTk5IiB5PSI2MzciIHdpZHRoPSIyNzYiIGhlaWdodD0iMjc2Ii8+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtNCIgZD0ibTc2OC4zNCw4OTZjLTEyLjkyLDAtMjQuMTMtMi4wMy0zMy42Mi02LjA4LTkuNS00LjA0LTE2LjkxLTEwLjc2LTIyLjIyLTIwLjEzLTUuMzItOS4zNi03Ljk4LTIyLjA0LTcuOTgtMzcuOTl2LTg1LjczYzAtMS43NS0xLjQyLTMuMTctMy4xNy0zLjE3aC0yMy4xN2MtMy41LDAtNi4zMy0yLjgzLTYuMzMtNi4zM3YtMjUuN2MwLTMuNSwyLjgzLTYuMzMsNi4zMy02LjMzaDIzLjQ5YzEuNjIsMCwyLjk4LTEuMjIsMy4xNS0yLjgzbDQuNDItNDIuMDNjLjM0LTMuMjIsMy4wNi01LjY3LDYuMy01LjY3aDI4LjI0YzMuNSwwLDYuMzMsMi44Myw2LjMzLDYuMzN2NDEuMDNjMCwxLjc1LDEuNDIsMy4xNywzLjE3LDMuMTdoNDIuNTVjMy41LDAsNi4zMywyLjgzLDYuMzMsNi4zM3YyNS43YzAsMy41LTIuODMsNi4zMy02LjMzLDYuMzNoLTQyLjU1Yy0xLjc1LDAtMy4xNywxLjQyLTMuMTcsMy4xN3Y4NS43M2MwLDkuNjMsMi4wOSwxNi4yNyw2LjI2LDE5Ljk1LDQuMTgsMy42NywxMS4yMSw1LjUsMjEuMDgsNS41aDE3LjIzYzMuNSwwLDYuMzMsMi44Myw2LjMzLDYuMzN2MjYuMDljMCwzLjUtMi44Myw2LjMzLTYuMzMsNi4zM2gtMjYuMzRaIi8+CiAgICA8L2c+CiAgICA8Zz4KICAgICAgPHJlY3QgY2xhc3M9ImNscy00IiB5PSI2MzciIHdpZHRoPSIyNzYiIGhlaWdodD0iMjc2Ii8+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtOSIgZD0ibTE2OS4zNCw4OTZjLTEyLjkyLDAtMjQuMTMtMi4wMy0zMy42Mi02LjA4LTkuNS00LjA0LTE2LjkxLTEwLjc2LTIyLjIyLTIwLjEzLTUuMzItOS4zNi03Ljk4LTIyLjA0LTcuOTgtMzcuOTl2LTg1LjczYzAtMS43NS0xLjQyLTMuMTctMy4xNy0zLjE3aC0yMy4xN2MtMy41LDAtNi4zMy0yLjgzLTYuMzMtNi4zM3YtMjUuN2MwLTMuNSwyLjgzLTYuMzMsNi4zMy02LjMzaDIzLjQ5YzEuNjIsMCwyLjk4LTEuMjIsMy4xNS0yLjgzbDQuNDItNDIuMDNjLjM0LTMuMjIsMy4wNi01LjY3LDYuMy01LjY3aDI4LjI0YzMuNSwwLDYuMzMsMi44Myw2LjMzLDYuMzN2NDEuMDNjMCwxLjc1LDEuNDIsMy4xNywzLjE3LDMuMTdoNDIuNTVjMy41LDAsNi4zMywyLjgzLDYuMzMsNi4zM3YyNS43YzAsMy41LTIuODMsNi4zMy02LjMzLDYuMzNoLTQyLjU1Yy0xLjc1LDAtMy4xNywxLjQyLTMuMTcsMy4xN3Y4NS43M2MwLDkuNjMsMi4wOSwxNi4yNyw2LjI2LDE5Ljk1LDQuMTgsMy42NywxMS4yMSw1LjUsMjEuMDgsNS41aDE3LjIzYzMuNSwwLDYuMzMsMi44Myw2LjMzLDYuMzN2MjYuMDljMCwzLjUtMi44Myw2LjMzLTYuMzMsNi4zM2gtMjYuMzRaIi8+CiAgICA8L2c+CiAgICA8Zz4KICAgICAgPHJlY3QgY2xhc3M9ImNscy05IiB4PSIzMDAiIHk9IjM3IiB3aWR0aD0iMjc2IiBoZWlnaHQ9IjI3NiIvPgogICAgICA8ZyBjbGFzcz0iY2xzLTYiPgogICAgICAgIDxwYXRoIGNsYXNzPSJjbHMtNSIgZD0ibTUyMS40NCwyOTguMDRsMzQuNzgsNDUuNTVjNC43Niw2LjIzLDEyLjE1LDkuODksMTkuOTksOS44OSwwLDAsMjIuMjMsMCwyMi4yMywwLDEwLjI0LDAsMTYuMTcsNi44MSwyMi45OCwxMy40MiwyLjQzLDIuMzYsNS40Niw0LjIyLDguNzIsMi4zMiwyLjk5LTEuNzQsNC4xMy01Ljg5LDIuMjktOC44NC01LjM5LTguNjQtMTEuMi0yOC44Ni0yMy41OC0yOC44NmgtMTcuODhjLTYuOTQsMC0xMi41Ny01LjYzLTEyLjU3LTEyLjU3di0xOS4xNHMwLTQ0Ljc1LDAtNDQuNzVjMC02Ljk0LTUuNjMtMTIuNTctMTIuNTctMTIuNTdoLTQwLjcyYy02Ljk0LDAtMTIuNTctNS42My0xMi41Ny0xMi41N3YtNDUuMjNjMC04LjMzLTcuOTYtMTQuMzYtMTUuOTgtMTIuMWwtNDYuMSwxMi45N2MtOC4wMiwyLjI2LTE1Ljk4LTMuNzctMTUuOTgtMTIuMXYtNTcuNjFjMC05Ljc5LTUuNjgtMTguNjktMTQuNTYtMjIuODFsLTEyNy44Ny01OS4zN2MtMjEuMjctOS44OC00My4yOSwxMi4xNy0zMy4zOCwzMy40M2w2Mi4xNSwxMzMuNGM1LjYyLDEyLjA2LDE1Ljc5LDIxLjQsMjguMjgsMjUuOThsMTQ5LjY5LDU0Ljg4YzguOTksMy4zLDE2Ljg1LDkuMDksMjIuNjYsMTYuN1oiLz4KICAgICAgICA8cGF0aCBjbGFzcz0iY2xzLTkiIGQ9Im01MjEuNDQsMzUzLjA0bDM0Ljc4LDQ1LjU1YzQuNzYsNi4yMywxMi4xNSw5Ljg5LDE5Ljk5LDkuODksMCwwLDIyLjIzLDAsMjIuMjMsMCwxMC4yNCwwLDE2LjE3LDYuODEsMjIuOTgsMTMuNDIsMi40MywyLjM2LDUuNDYsNC4yMiw4LjcyLDIuMzIsMi45OS0xLjc0LDQuMTMtNS44OSwyLjI5LTguODQtNS4zOS04LjY0LTExLjItMjguODYtMjMuNTgtMjguODZoLTE3Ljg4Yy02Ljk0LDAtMTIuNTctNS42My0xMi41Ny0xMi41N3YtMTkuMTRzMC00NC43NSwwLTQ0Ljc1YzAtNi45NC01LjYzLTEyLjU3LTEyLjU3LTEyLjU3aC00MC43MmMtNi45NCwwLTEyLjU3LTUuNjMtMTIuNTctMTIuNTd2LTQ1LjIzYzAtOC4zMy03Ljk2LTE0LjM2LTE1Ljk4LTEyLjFsLTQ2LjEsMTIuOTdjLTguMDIsMi4yNi0xNS45OC0zLjc3LTE1Ljk4LTEyLjF2LTU3LjYxYzAtOS43OS01LjY4LTE4LjY5LTE0LjU2LTIyLjgxbC0xMjcuODctNTkuMzdjLTIxLjI3LTkuODgtNDMuMjksMTIuMTctMzMuMzgsMzMuNDNsNjIuMTUsMTMzLjRjNS42MiwxMi4wNiwxNS43OSwyMS40LDI4LjI4LDI1Ljk4bDE0OS42OSw1NC44OGM4Ljk5LDMuMywxNi44NSw5LjA5LDIyLjY2LDE2LjdaIi8+CiAgICAgICAgPHBhdGggY2xhc3M9ImNscy01IiBkPSJtNTIxLjQ0LDQwOC4wNGwzNC43OCw0NS41NWM0Ljc2LDYuMjMsMTIuMTUsOS44OSwxOS45OSw5Ljg5LDAsMCwyMi4yMywwLDIyLjIzLDAsMTAuMjQsMCwxNi4xNyw2LjgxLDIyLjk4LDEzLjQyLDIuNDMsMi4zNiw1LjQ2LDQuMjIsOC43MiwyLjMyLDIuOTktMS43NCw0LjEzLTUuODksMi4yOS04Ljg0LTUuMzktOC42NC0xMS4yLTI4Ljg2LTIzLjU4LTI4Ljg2aC0xNy44OGMtNi45NCwwLTEyLjU3LTUuNjMtMTIuNTctMTIuNTd2LTE5LjE0czAtNDQuNzUsMC00NC43NWMwLTYuOTQtNS42My0xMi41Ny0xMi41Ny0xMi41N2gtNDAuNzJjLTYuOTQsMC0xMi41Ny01LjYzLTEyLjU3LTEyLjU3di00NS4yM2MwLTguMzMtNy45Ni0xNC4zNi0xNS45OC0xMi4xbC00Ni4xLDEyLjk3Yy04LjAyLDIuMjYtMTUuOTgtMy43Ny0xNS45OC0xMi4xdi01Ny42MWMwLTkuNzktNS42OC0xOC42OS0xNC41Ni0yMi44MWwtMTI3Ljg3LTU5LjM3Yy0yMS4yNy05Ljg4LTQzLjI5LDEyLjE3LTMzLjM4LDMzLjQzbDYyLjE1LDEzMy40YzUuNjIsMTIuMDYsMTUuNzksMjEuNCwyOC4yOCwyNS45OGwxNDkuNjksNTQuODhjOC45OSwzLjMsMTYuODUsOS4wOSwyMi42NiwxNi43WiIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJjbHMtOSIgZD0ibTUyMS40NCw0NjMuMDRsMzQuNzgsNDUuNTVjNC43Niw2LjIzLDEyLjE1LDkuODksMTkuOTksOS44OSwwLDAsMjIuMjMsMCwyMi4yMywwLDEwLjI0LDAsMTYuMTcsNi44MSwyMi45OCwxMy40MiwyLjQzLDIuMzYsNS40Niw0LjIyLDguNzIsMi4zMiwyLjk5LTEuNzQsNC4xMy01Ljg5LDIuMjktOC44NC01LjM5LTguNjQtMTEuMi0yOC44Ni0yMy41OC0yOC44NmgtMTcuODhjLTYuOTQsMC0xMi41Ny01LjYzLTEyLjU3LTEyLjU3di0xOS4xNHMwLTQ0Ljc1LDAtNDQuNzVjMC02Ljk0LTUuNjMtMTIuNTctMTIuNTctMTIuNTdoLTQwLjcyYy02Ljk0LDAtMTIuNTctNS42My0xMi41Ny0xMi41N3YtNDUuMjNjMC04LjMzLTcuOTYtMTQuMzYtMTUuOTgtMTIuMWwtNDYuMSwxMi45N2MtOC4wMiwyLjI2LTE1Ljk4LTMuNzctMTUuOTgtMTIuMXYtNTcuNjFjMC05Ljc5LTUuNjgtMTguNjktMTQuNTYtMjIuODFsLTEyNy44Ny01OS4zN2MtMjEuMjctOS44OC00My4yOSwxMi4xNy0zMy4zOCwzMy40M2w2Mi4xNSwxMzMuNGM1LjYyLDEyLjA2LDE1Ljc5LDIxLjQsMjguMjgsMjUuOThsMTQ5LjY5LDU0Ljg4YzguOTksMy4zLDE2Ljg1LDkuMDksMjIuNjYsMTYuN1oiLz4KICAgICAgPC9nPgogICAgPC9nPgogICAgPGc+CiAgICAgIDxyZWN0IGNsYXNzPSJjbHMtMTAiIHg9IjYwMCIgeT0iMzciIHdpZHRoPSIyNzYiIGhlaWdodD0iMjc2Ii8+CiAgICAgIDxnIGNsYXNzPSJjbHMtMyI+CiAgICAgICAgPHBvbHlnb24gY2xhc3M9ImNscy00IiBwb2ludHM9IjEwMTQuMTQgMTAwLjQ0IDk3Ny44NCAzNy41NiA5MTIuNzggNzUuMTMgOTEyLjc4IDAgODQwLjE4IDAgODQwLjE4IDc1LjEzIDc3NS4xMiAzNy41NiA3MzguODIgMTAwLjQ0IDgwMy44OCAxMzggNzM4LjgyIDE3NS41NiA3NzUuMTIgMjM4LjQ0IDg0MC4xOCAyMDAuODcgODQwLjE4IDI3NiA5MTIuNzggMjc2IDkxMi43OCAyMDAuODcgOTc3Ljg0IDIzOC40NCAxMDE0LjE0IDE3NS41NiA5NDkuMDggMTM4IDEwMTQuMTQgMTAwLjQ0Ii8+CiAgICAgICAgPHBvbHlnb24gY2xhc3M9ImNscy00IiBwb2ludHM9IjczOC4xNCAxNzUuNDQgNzAxLjg0IDExMi41NiA2MzYuNzggMTUwLjEzIDYzNi43OCA3NSA1NjQuMTggNzUgNTY0LjE4IDE1MC4xMyA0OTkuMTIgMTEyLjU2IDQ2Mi44MiAxNzUuNDQgNTI3Ljg4IDIxMyA0NjIuODIgMjUwLjU2IDQ5OS4xMiAzMTMuNDQgNTY0LjE4IDI3NS44NyA1NjQuMTggMzUxIDYzNi43OCAzNTEgNjM2Ljc4IDI3NS44NyA3MDEuODQgMzEzLjQ0IDczOC4xNCAyNTAuNTYgNjczLjA4IDIxMyA3MzguMTQgMTc1LjQ0Ii8+CiAgICAgIDwvZz4KICAgIDwvZz4KICAgIDxnPgogICAgICA8cmVjdCBjbGFzcz0iY2xzLTkiIHg9IjU5OSIgeT0iMzM3IiB3aWR0aD0iMjc2IiBoZWlnaHQ9IjI3NiIvPgogICAgICA8ZyBjbGFzcz0iY2xzLTEiPgogICAgICAgIDxwYXRoIGNsYXNzPSJjbHMtNCIgZD0ibTUwMSw0MTkuMzRsMzUuODctNjIuNDRjNS41My05LjYzLDE3LjkyLTEyLjc5LDI3LjM5LTYuOTlsMTU0Ljc3LDk0Ljc2YzguODksNS40NCwxMi4wMSwxNi44Nyw3LjExLDI2LjA3bC0xMTYuNTEsMjE5LjA0Yy00LjQsOC4yOC0xNi43OSw2LjMxLTE4LjQxLTIuOTNsLTI4LjIzLTE2MS4xN2MtLjgxLTQuNi0zLjIyLTguNzctNi44MS0xMS43NWwtMTcuMjEtMTQuMzJjLTEuNjgtMS40LTMuMTItMy4wNy00LjI1LTQuOTRsLTMzLjQ4LTU1LjI4Yy0zLjcyLTYuMTQtMy44MS0xMy44MS0uMjMtMjAuMDNaIi8+CiAgICAgICAgPHBhdGggY2xhc3M9ImNscy0yIiBkPSJtNTcwLjk3LDQxOS4zNGwzNS44Ny02Mi40NGM1LjUzLTkuNjMsMTcuOTItMTIuNzksMjcuMzktNi45OWwxNTQuNzcsOTQuNzZjOC44OSw1LjQ0LDEyLjAxLDE2Ljg3LDcuMTEsMjYuMDdsLTExNi41MSwyMTkuMDRjLTQuNCw4LjI4LTE2Ljc5LDYuMzEtMTguNDEtMi45M2wtMjguMjMtMTYxLjE3Yy0uODEtNC42LTMuMjItOC43Ny02LjgxLTExLjc1bC0xNy4yMS0xNC4zMmMtMS42OC0xLjQtMy4xMi0zLjA3LTQuMjUtNC45NGwtMzMuNDgtNTUuMjhjLTMuNzItNi4xNC0zLjgxLTEzLjgxLS4yMy0yMC4wM1oiLz4KICAgICAgICA8cGF0aCBjbGFzcz0iY2xzLTEwIiBkPSJtNjQwLjkzLDQxOS4zNGwzNS44Ny02Mi40NGM1LjUzLTkuNjMsMTcuOTItMTIuNzksMjcuMzktNi45OWwxNTQuNzcsOTQuNzZjOC44OSw1LjQ0LDEyLjAxLDE2Ljg3LDcuMTEsMjYuMDdsLTExNi41MSwyMTkuMDRjLTQuNCw4LjI4LTE2Ljc5LDYuMzEtMTguNDEtMi45M2wtMjguMjMtMTYxLjE3Yy0uODEtNC42LTMuMjItOC43Ny02LjgxLTExLjc1bC0xNy4yMS0xNC4zMmMtMS42OC0xLjQtMy4xMi0zLjA3LTQuMjUtNC45NGwtMzMuNDgtNTUuMjhjLTMuNzItNi4xNC0zLjgxLTEzLjgxLS4yMy0yMC4wM1oiLz4KICAgICAgPC9nPgogICAgPC9nPgogICAgPGc+CiAgICAgIDxyZWN0IGNsYXNzPSJjbHMtNCIgeD0iLjI1IiB5PSIzMzcuMjUiIHdpZHRoPSIyNzUuNSIgaGVpZ2h0PSIyNzUuNSIvPgogICAgICA8Zz4KICAgICAgICA8Zz4KICAgICAgICAgIDxwYXRoIGNsYXNzPSJjbHMtOSIgZD0ibTk3LjAyLDU5NC4wM2MtMTQuNDgtMzAuNDMtNDEuMjMtNTEuODYtNzItNjAuNDItNi45OC0xLjk0LTE0LjE2LTMuMjItMjEuNDUtMy44LTEuMTktLjA5LTIuMzgtLjE2LTMuNTctLjIydjgzLjQyaDEwNC4wN2MtLjgyLTIuOTktMS43NS01Ljk2LTIuODMtOC45Mi0xLjI2LTMuNDUtMi42Ny02LjgtNC4yMS0xMC4wNVoiLz4KICAgICAgICAgIDxwYXRoIGNsYXNzPSJjbHMtOSIgZD0ibTMuNTcsNTI5LjhjNy4yOS41OCwxNC40OCwxLjg2LDIxLjQ1LDMuOCwzMC43OCw4LjU3LDU3LjUzLDI5Ljk5LDcyLDYwLjQyLDEuNTUsMy4yNSwyLjk2LDYuNiw0LjIxLDEwLjA1LDEuMDgsMi45NiwyLjAxLDUuOTQsMi44Myw4LjkyaDM0Ljk4Yy0xLjQzLTYuODktMy4zNy0xMy43NS01Ljg1LTIwLjU2LTIuODMtNy43Ny02LjI1LTE1LjE2LTEwLjE4LTIyLjE0LTEuNDctMi42LTEuMTktNS44NC43My04LjEzbDEzLjgzLTE2LjQ4YzIuMTItMi41MywyLjI1LTYuMTguMjktOC44My0xNi45Mi0yMi44Ny0zOC44OC00MS02My42OC01My4zNy0yLjk1LTEuNDctNi41My0uNzEtOC42NSwxLjgybC0xMy44MiwxNi40N2MtMS45MiwyLjI5LTUuMDcsMy4xMy03Ljg5LDIuMTMtMTMuOTktNC45Ni0yOC43Ny03LjgyLTQzLjg0LTguMzd2MzQuMDVjMS4xOS4wNiwyLjM4LjEyLDMuNTcuMjJaIi8+CiAgICAgICAgPC9nPgogICAgICAgIDxnPgogICAgICAgICAgPHBhdGggY2xhc3M9ImNscy03IiBkPSJtMjU3LjAzLDUxNS45OGMtMzAuNDMsMTQuNDgtNTEuODYsNDEuMjMtNjAuNDIsNzItMS45NCw2Ljk4LTMuMjIsMTQuMTYtMy44LDIxLjQ1LS4wOSwxLjE5LS4xNiwyLjM4LS4yMiwzLjU3aDgzLjQydi0xMDQuMDdjLTIuOTkuODItNS45NiwxLjc1LTguOTIsMi44My0zLjQ1LDEuMjYtNi44LDIuNjctMTAuMDUsNC4yMVoiLz4KICAgICAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMTAiIGQ9Im0xOTIuOCw2MDkuNDNjLjU4LTcuMjksMS44Ni0xNC40OCwzLjgtMjEuNDUsOC41Ny0zMC43OCwyOS45OS01Ny41Myw2MC40Mi03MiwzLjI1LTEuNTUsNi42LTIuOTYsMTAuMDUtNC4yMSwyLjk2LTEuMDgsNS45NC0yLjAxLDguOTItMi44M3YtMzQuOThjLTYuODksMS40My0xMy43NSwzLjM3LTIwLjU2LDUuODUtNy43NywyLjgzLTE1LjE2LDYuMjUtMjIuMTQsMTAuMTgtMi42LDEuNDctNS44NCwxLjE5LTguMTMtLjczbC0xNi40OC0xMy44M2MtMi41My0yLjEyLTYuMTgtMi4yNS04LjgzLS4yOS0yMi44NywxNi45Mi00MSwzOC44OC01My4zNyw2My42OC0xLjQ3LDIuOTUtLjcxLDYuNTMsMS44Miw4LjY1bDE2LjQ3LDEzLjgyYzIuMjksMS45MiwzLjEzLDUuMDcsMi4xMyw3Ljg5LTQuOTYsMTMuOTktNy44MiwyOC43Ny04LjM3LDQzLjg0aDM0LjA1Yy4wNi0xLjE5LjEyLTIuMzguMjItMy41N1oiLz4KICAgICAgICA8L2c+CiAgICAgICAgPGc+CiAgICAgICAgICA8cGF0aCBjbGFzcz0iY2xzLTEwIiBkPSJtMTc4Ljk4LDM1NS45N2MxNC40OCwzMC40Myw0MS4yMyw1MS44Niw3Miw2MC40Miw2Ljk4LDEuOTQsMTQuMTYsMy4yMiwyMS40NSwzLjgsMS4xOS4wOSwyLjM4LjE2LDMuNTcuMjJ2LTgzLjQyaC0xMDQuMDdjLjgyLDIuOTksMS43NSw1Ljk2LDIuODMsOC45MiwxLjI2LDMuNDUsMi42Nyw2LjgsNC4yMSwxMC4wNVoiLz4KICAgICAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMTAiIGQ9Im0yNzIuNDMsNDIwLjJjLTcuMjktLjU4LTE0LjQ4LTEuODYtMjEuNDUtMy44LTMwLjc4LTguNTctNTcuNTMtMjkuOTktNzItNjAuNDItMS41NS0zLjI1LTIuOTYtNi42LTQuMjEtMTAuMDUtMS4wOC0yLjk2LTIuMDEtNS45NC0yLjgzLTguOTJoLTM0Ljk4YzEuNDMsNi44OSwzLjM3LDEzLjc1LDUuODUsMjAuNTYsMi44Myw3Ljc3LDYuMjUsMTUuMTYsMTAuMTgsMjIuMTQsMS40NywyLjYsMS4xOSw1Ljg0LS43Myw4LjEzbC0xMy44MywxNi40OGMtMi4xMiwyLjUzLTIuMjUsNi4xOC0uMjksOC44MywxNi45MiwyMi44NywzOC44OCw0MSw2My42OCw1My4zNywyLjk1LDEuNDcsNi41My43MSw4LjY1LTEuODJsMTMuODItMTYuNDdjMS45Mi0yLjI5LDUuMDctMy4xMyw3Ljg5LTIuMTMsMTMuOTksNC45NiwyOC43Nyw3LjgyLDQzLjg0LDguMzd2LTM0LjA1Yy0xLjE5LS4wNi0yLjM4LS4xMi0zLjU3LS4yMloiLz4KICAgICAgICA8L2c+CiAgICAgICAgPGc+CiAgICAgICAgICA8cGF0aCBjbGFzcz0iY2xzLTciIGQ9Im0xOC45Nyw0MzQuMDJjMzAuNDMtMTQuNDgsNTEuODYtNDEuMjMsNjAuNDItNzIsMS45NC02Ljk4LDMuMjItMTQuMTYsMy44LTIxLjQ1LjA5LTEuMTkuMTYtMi4zOC4yMi0zLjU3SDB2MTA0LjA3YzIuOTktLjgyLDUuOTYtMS43NSw4LjkyLTIuODMsMy40NS0xLjI2LDYuOC0yLjY3LDEwLjA1LTQuMjFaIi8+CiAgICAgICAgICA8cGF0aCBjbGFzcz0iY2xzLTEwIiBkPSJtODMuMiwzNDAuNTdjLS41OCw3LjI5LTEuODYsMTQuNDgtMy44LDIxLjQ1LTguNTcsMzAuNzgtMjkuOTksNTcuNTMtNjAuNDIsNzItMy4yNSwxLjU1LTYuNiwyLjk2LTEwLjA1LDQuMjEtMi45NiwxLjA4LTUuOTQsMi4wMS04LjkyLDIuODN2MzQuOThjNi44OS0xLjQzLDEzLjc1LTMuMzcsMjAuNTYtNS44NSw3Ljc3LTIuODMsMTUuMTYtNi4yNSwyMi4xNC0xMC4xOCwyLjYtMS40Nyw1Ljg0LTEuMTksOC4xMy43M2wxNi40OCwxMy44M2MyLjUzLDIuMTIsNi4xOCwyLjI1LDguODMuMjksMjIuODctMTYuOTIsNDEtMzguODgsNTMuMzctNjMuNjgsMS40Ny0yLjk1LjcxLTYuNTMtMS44Mi04LjY1bC0xNi40Ny0xMy44MmMtMi4yOS0xLjkyLTMuMTMtNS4wNy0yLjEzLTcuODksNC45Ni0xMy45OSw3LjgyLTI4Ljc3LDguMzctNDMuODRoLTM0LjA1Yy0uMDYsMS4xOS0uMTIsMi4zOC0uMjIsMy41N1oiLz4KICAgICAgICA8L2c+CiAgICAgIDwvZz4KICAgIDwvZz4KICAgIDxnPgogICAgICA8cmVjdCBjbGFzcz0iY2xzLTUiIHg9IjI5OS44MSIgeT0iNjM2Ljk3IiB3aWR0aD0iMjc2IiBoZWlnaHQ9IjI3NiIvPgogICAgICA8ZyBjbGFzcz0iY2xzLTgiPgogICAgICAgIDxnPgogICAgICAgICAgPHBhdGggY2xhc3M9ImNscy03IiBkPSJtMzI3LjgxLDg1OC4zNWMxMi4zMywwLDI0LjAzLTIuNjgsMzQuNTYtNy40OCw0Ljg5LTIuMjMsOS41NC00LjkyLDEzLjg3LTguMDIsMTkuMTEtMTMuNjYsMzIuMjEtMzUuMiwzNC41Ni01OS44Ny4yNS0yLjY0LjM4LTUuMy4zOC04LjAxLDAtMi43LS4xMy01LjM3LS4zOC04LjAxLTIuMzUtMjQuNjctMTUuNDUtNDYuMjEtMzQuNTYtNTkuODctNC4zMy0zLjEtOC45Ny01Ljc5LTEzLjg3LTguMDItMTAuNTMtNC44LTIyLjIzLTcuNDgtMzQuNTYtNy40OGgwczAsMTY2Ljc2LDAsMTY2Ljc2aDBaIi8+CiAgICAgICAgICA8cGF0aCBjbGFzcz0iY2xzLTciIGQ9Im0yNzkuMzgsNzA3LjA5Yy0xOS4xMSwxMy42Ni0zMi4yMSwzNS4yLTM0LjU2LDU5Ljg3LS4yNSwyLjY0LS4zOCw1LjMtLjM4LDguMDEsMCwyLjcuMTMsNS4zNy4zOCw4LjAxLDIuMzUsMjQuNjcsMTUuNDUsNDYuMjEsMzQuNTYsNTkuODcsNC4zMywzLjEsOC45Nyw1Ljc5LDEzLjg3LDguMDIsMTAuNTMsNC44LDIyLjIzLDcuNDgsMzQuNTYsNy40OHYtMTY2Ljc2Yy0xMi4zMywwLTI0LjAzLDIuNjgtMzQuNTYsNy40OC00LjksMi4yMy05LjU0LDQuOTItMTMuODcsOC4wMloiLz4KICAgICAgICAgIDxwYXRoIGNsYXNzPSJjbHMtNSIgZD0ibTI5My4yNCw4NTAuODZjLTQuOS0yLjIzLTkuNTQtNC45Mi0xMy44Ny04LjAyLTE5LjExLTEzLjY2LTMyLjIxLTM1LjItMzQuNTYtNTkuODctLjI1LTIuNjQtLjM4LTUuMy0uMzgtOC4wMSwwLTIuNy4xMy01LjM3LjM4LTguMDEsMi4zNS0yNC42NywxNS40NS00Ni4yMSwzNC41Ni01OS44Nyw0LjMzLTMuMSw4Ljk3LTUuNzksMTMuODctOC4wMiwxMC41My00LjgsMjIuMjMtNy40OCwzNC41Ni03LjQ4di00Ny42Yy0xMC41MiwwLTIwLjc1LDEuMjUtMzAuNTUsMy41OS0yLjM2LjU2LTQuMDEsMi42OS00LjAxLDUuMTF2MTUuOGMwLDIuMi0xLjM3LDQuMTUtMy40Myw0LjkyLTExLjMyLDQuMjQtMjEuNzUsMTAuMzItMzAuOTEsMTcuODgtMS43LDEuNC00LjA4LDEuNjEtNS45OS41MWwtMTMuNjktNy45Yy0yLjEtMS4yMS00Ljc2LS44NC02LjQzLjkyLTE0LjAzLDE0Ljc4LTI0LjY0LDMyLjg0LTMwLjU4LDUyLjktLjY5LDIuMzMuMzIsNC44MiwyLjQyLDYuMDNsMTMuNyw3LjkxYzEuOSwxLjEsMi45MSwzLjI2LDIuNTUsNS40My0uOTYsNS44MS0xLjQ3LDExLjc4LTEuNDcsMTcuODYsMCw2LjA4LjUsMTIuMDUsMS40NywxNy44Ni4zNiwyLjE3LS42NSw0LjMzLTIuNTUsNS40M2wtMTMuNyw3LjkxYy0yLjEsMS4yMS0zLjExLDMuNzEtMi40Miw2LjAzLDUuOTQsMjAuMDYsMTYuNTUsMzguMTIsMzAuNTgsNTIuOSwxLjY3LDEuNzYsNC4zMywyLjEzLDYuNDMuOTJsMTMuNjktNy45YzEuOTEtMS4xLDQuMjktLjg5LDUuOTkuNTEsOS4xNiw3LjU2LDE5LjU5LDEzLjY0LDMwLjkxLDE3Ljg4LDIuMDYuNzcsMy40MywyLjczLDMuNDMsNC45MnYxNS44YzAsMi40MiwxLjY1LDQuNTUsNC4wMSw1LjExLDkuOCwyLjM0LDIwLjAzLDMuNTksMzAuNTUsMy41OXYtNDcuNmMtMTIuMzMsMC0yNC4wMy0yLjY4LTM0LjU2LTcuNDhaIi8+CiAgICAgICAgICA8cGF0aCBjbGFzcz0iY2xzLTkiIGQ9Im00NTAuOTksODA2LjE3bC0xMy43LTcuOTFjLTEuOS0xLjEtMi45MS0zLjI2LTIuNTUtNS40My45Ni01LjgxLDEuNDctMTEuNzgsMS40Ny0xNy44NiwwLTYuMDgtLjUtMTIuMDUtMS40Ny0xNy44Ni0uMzYtMi4xNy42NS00LjMzLDIuNTUtNS40M2wxMy43LTcuOTFjMi4xLTEuMjEsMy4xMS0zLjcxLDIuNDItNi4wMy01Ljk0LTIwLjA2LTE2LjU1LTM4LjEyLTMwLjU4LTUyLjktMS42Ny0xLjc2LTQuMzMtMi4xMy02LjQzLS45MmwtMTMuNjksNy45Yy0xLjkxLDEuMS00LjI5Ljg5LTUuOTktLjUxLTkuMTYtNy41Ni0xOS41OS0xMy42NC0zMC45MS0xNy44OC0yLjA2LS43Ny0zLjQzLTIuNzMtMy40My00Ljkydi0xNS44YzAtMi40Mi0xLjY1LTQuNTUtNC4wMS01LjExLTkuOC0yLjM0LTIwLjAzLTMuNTktMzAuNTUtMy41OXY0Ny42czAsMCwwLDBjMTIuMzMsMCwyNC4wMywyLjY4LDM0LjU2LDcuNDgsNC45LDIuMjMsOS41NCw0LjkyLDEzLjg3LDguMDIsMTkuMTEsMTMuNjYsMzIuMjEsMzUuMiwzNC41Niw1OS44Ny4yNSwyLjY0LjM4LDUuMy4zOCw4LjAxLDAsMi43LS4xMyw1LjM3LS4zOCw4LjAxLTIuMzUsMjQuNjctMTUuNDUsNDYuMjEtMzQuNTYsNTkuODctNC4zMywzLjEtOC45Nyw1Ljc5LTEzLjg3LDguMDItMTAuNTMsNC44LTIyLjIzLDcuNDgtMzQuNTYsNy40OGgwdjQ3LjZjMTAuNTIsMCwyMC43NS0xLjI1LDMwLjU1LTMuNTksMi4zNi0uNTYsNC4wMS0yLjY5LDQuMDEtNS4xMXYtMTUuOGMwLTIuMiwxLjM3LTQuMTUsMy40My00LjkyLDExLjMyLTQuMjQsMjEuNzUtMTAuMzIsMzAuOTEtMTcuODgsMS43LTEuNCw0LjA4LTEuNjEsNS45OS0uNTFsMTMuNjksNy45YzIuMSwxLjIxLDQuNzYuODQsNi40My0uOTIsMTQuMDMtMTQuNzgsMjQuNjQtMzIuODQsMzAuNTgtNTIuOS42OS0yLjMzLS4zMi00LjgyLTIuNDItNi4wM1oiLz4KICAgICAgICA8L2c+CiAgICAgIDwvZz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPg==";
+const GEAR1 = "data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8yIiBkYXRhLW5hbWU9IkNhcGEgMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTY2LjI4IDE2Ny4zIj4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLmNscy0xIHsKICAgICAgICBmaWxsOiBub25lOwogICAgICB9CgogICAgICAuY2xzLTIgewogICAgICAgIGZpbGw6ICNmMmU2Y2M7CiAgICAgIH0KCiAgICAgIC5jbHMtMyB7CiAgICAgICAgZmlsbDogIzJlYmRlZjsKICAgICAgfQogICAgPC9zdHlsZT4KICA8L2RlZnM+CiAgPGcgaWQ9IkNhcGFfMS0yIiBkYXRhLW5hbWU9IkNhcGEgMSI+CiAgICA8Zz4KICAgICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJtOTIuMzgsMTM2LjA4YzcuNzUtMS4zNywxNC44Mi00LjM1LDIwLjkxLTguNTQsMi44My0xLjk1LDUuNDUtNC4xNSw3LjgzLTYuNTgsMTAuNTEtMTAuNzEsMTYuMzUtMjUuNzEsMTUuMS00MS40OC0uMTMtMS42OS0uMzUtMy4zOC0uNjUtNS4wOC0uMy0xLjctLjY4LTMuMzYtMS4xMy00Ljk5LTQuMjEtMTUuMjUtMTQuODQtMjcuMzUtMjguMzctMzMuODItMy4wNy0xLjQ3LTYuMjktMi42NS05LjYxLTMuNTEtNy4xNS0xLjg1LTE0LjgxLTIuMjQtMjIuNTctLjg3aDBzMTguNDksMTA0Ljg3LDE4LjQ5LDEwNC44N2gwWiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Im00NS4xNSw0Ni4zM2MtMTAuNTEsMTAuNzEtMTYuMzUsMjUuNzEtMTUuMSw0MS40OC4xMywxLjY4LjM1LDMuMzguNjUsNS4wOC4zLDEuNy42OCwzLjM2LDEuMTMsNC45OSw0LjIxLDE1LjI1LDE0Ljg0LDI3LjM1LDI4LjM3LDMzLjgyLDMuMDcsMS40Nyw2LjI5LDIuNjUsOS42MSwzLjUxLDcuMTYsMS44NSwxNC44MSwyLjI0LDIyLjU3Ljg3bC0xOC40OS0xMDQuODdjLTcuNzUsMS4zNy0xNC44Miw0LjM1LTIwLjkxLDguNTQtMi44MywxLjk1LTUuNDUsNC4xNS03LjgzLDYuNThaIi8+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMiIgZD0ibTY5LjgyLDEzNS4yMWMtMy4zMy0uODYtNi41NC0yLjA0LTkuNjEtMy41MS0xMy41NC02LjQ3LTI0LjE2LTE4LjU2LTI4LjM3LTMzLjgyLS40NS0xLjYzLS44My0zLjI5LTEuMTMtNC45OS0uMy0xLjctLjUxLTMuMzktLjY1LTUuMDgtMS4yNi0xNS43OCw0LjU5LTMwLjc3LDE1LjEtNDEuNDgsMi4zOC0yLjQzLDUtNC42NCw3LjgzLTYuNTgsNi4wOS00LjE5LDEzLjE1LTcuMTcsMjAuOTEtOC41NGwtNS4yOC0yOS45M2MtNi42MiwxLjE3LTEyLjkxLDMuMDktMTguODEsNS42NS0xLjQyLjYyLTIuMjMsMi4xMy0xLjk2LDMuNjZsMS43NSw5Ljk0Yy4yNCwxLjM4LS40LDIuNzYtMS42MSwzLjQ4LTYuNjUsMy45Mi0xMi41Myw4LjktMTcuNDYsMTQuNjctLjkxLDEuMDctMi4zOSwxLjQ3LTMuNzEuOTlsLTkuNDktMy40NWMtMS40NS0uNTMtMy4wOSwwLTMuOTQsMS4yOUM2LjIxLDQ4LjM1LDEuNTMsNjAuODguMDIsNzQuMTZjLS4xOCwxLjU0Ljc0LDMsMi4xOSwzLjUzbDkuNSwzLjQ2YzEuMzIuNDgsMi4xOSwxLjczLDIuMjEsMy4xMy4wNCwzLjc2LjM4LDcuNTcsMS4wNiwxMS4zOS42NywzLjgzLDEuNjUsNy41MiwyLjksMTEuMDcuNDcsMS4zMi4wNywyLjgtMSwzLjdsLTcuNzQsNi41Yy0xLjE5LDEtMS41NCwyLjY4LS44NSw0LjA2LDUuOTYsMTEuOTYsMTQuNjQsMjIuMTMsMjUuMSwyOS44OCwxLjI0LjkyLDIuOTYuODYsNC4xNS0uMTRsNy43My02LjQ5YzEuMDgtLjksMi42LTEuMDMsMy44Mi0uMzQsNi42LDMuNzQsMTMuODMsNi40MSwyMS40Miw3LjgyLDEuMzguMjYsMi40NiwxLjMzLDIuNywyLjcybDEuNzUsOS45NGMuMjcsMS41MiwxLjU1LDIuNjgsMy4wOSwyLjc3LDYuNDIuMzksMTMsLjA0LDE5LjYxLTEuMTNsLTUuMjgtMjkuOTNjLTcuNzUsMS4zNy0xNS40MS45OC0yMi41Ny0uODdaIi8+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMyIgZD0ibTE2NC4wNiw4OS42MWwtOS41LTMuNDZjLTEuMzItLjQ4LTIuMTktMS43My0yLjIxLTMuMTMtLjA0LTMuNzYtLjM4LTcuNTctMS4wNi0xMS4zOS0uNjctMy44My0xLjY1LTcuNTItMi45LTExLjA3LS40Ny0xLjMyLS4wNy0yLjgsMS0zLjdsNy43NC02LjVjMS4xOS0xLDEuNTQtMi42OC44NS00LjA2LTUuOTYtMTEuOTYtMTQuNjQtMjIuMTMtMjUuMS0yOS44OC0xLjI0LS45Mi0yLjk2LS44Ni00LjE1LjE0bC03LjczLDYuNDljLTEuMDguOS0yLjYsMS4wMy0zLjgyLjM0LTYuNi0zLjc0LTEzLjgzLTYuNDEtMjEuNDItNy44Mi0xLjM4LS4yNi0yLjQ2LTEuMzMtMi43LTIuNzJsLTEuNzUtOS45NGMtLjI3LTEuNTItMS41NS0yLjY4LTMuMDktMi43Ny02LjQyLS4zOS0xMi45OS0uMDQtMTkuNjEsMS4xM2w1LjI4LDI5LjkzaDBjNy43NS0xLjM3LDE1LjQxLS45OCwyMi41Ny44NywzLjMzLjg2LDYuNTQsMi4wNCw5LjYxLDMuNTEsMTMuNTQsNi40NywyNC4xNiwxOC41NiwyOC4zNywzMy44Mi40NSwxLjYzLjgzLDMuMjksMS4xMyw0Ljk5LjMsMS43LjUxLDMuMzkuNjUsNS4wOCwxLjI2LDE1Ljc4LTQuNTksMzAuNzctMTUuMSw0MS40OC0yLjM4LDIuNDMtNSw0LjY0LTcuODMsNi41OC02LjA5LDQuMTktMTMuMTUsNy4xNy0yMC45MSw4LjU0aDBsNS4yOCwyOS45M2M2LjYyLTEuMTcsMTIuOTEtMy4wOSwxOC44MS01LjY1LDEuNDItLjYyLDIuMjMtMi4xMywxLjk2LTMuNjZsLTEuNzUtOS45NGMtLjI0LTEuMzguNC0yLjc2LDEuNjEtMy40OCw2LjY1LTMuOTIsMTIuNTMtOC45LDE3LjQ2LTE0LjY3LjkxLTEuMDcsMi4zOS0xLjQ3LDMuNzEtLjk5bDkuNDksMy40NWMxLjQ1LjUzLDMuMDksMCwzLjk0LTEuMjksNy4xOC0xMC44NSwxMS44Ni0yMy4zOCwxMy4zNy0zNi42Ni4xOC0xLjU0LS43NC0zLTIuMTktMy41M1oiLz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPg==";
+const GEAR2 = "data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8yIiBkYXRhLW5hbWU9IkNhcGEgMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTY2LjI4IDE2Ny4zIj4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLmNscy0xIHsKICAgICAgICBmaWxsOiAjZjFjMjUwOwogICAgICB9CgogICAgICAuY2xzLTIgewogICAgICAgIGZpbGw6IG5vbmU7CiAgICAgIH0KCiAgICAgIC5jbHMtMyB7CiAgICAgICAgZmlsbDogI2YyZTZjYzsKICAgICAgfQogICAgPC9zdHlsZT4KICA8L2RlZnM+CiAgPGcgaWQ9IkNhcGFfMS0yIiBkYXRhLW5hbWU9IkNhcGEgMSI+CiAgICA8Zz4KICAgICAgPHBhdGggY2xhc3M9ImNscy0yIiBkPSJtOTIuMzgsMTM2LjA4YzcuNzUtMS4zNywxNC44Mi00LjM1LDIwLjkxLTguNTQsMi44My0xLjk1LDUuNDUtNC4xNSw3LjgzLTYuNTgsMTAuNTEtMTAuNzEsMTYuMzUtMjUuNzEsMTUuMS00MS40OC0uMTMtMS42OS0uMzUtMy4zOC0uNjUtNS4wOC0uMy0xLjctLjY4LTMuMzYtMS4xMy00Ljk5LTQuMjEtMTUuMjUtMTQuODQtMjcuMzUtMjguMzctMzMuODItMy4wNy0xLjQ3LTYuMjktMi42NS05LjYxLTMuNTEtNy4xNS0xLjg1LTE0LjgxLTIuMjQtMjIuNTctLjg3aDBzMTguNDksMTA0Ljg3LDE4LjQ5LDEwNC44N2gwWiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Im00NS4xNSw0Ni4zM2MtMTAuNTEsMTAuNzEtMTYuMzUsMjUuNzEtMTUuMSw0MS40OC4xMywxLjY4LjM1LDMuMzguNjUsNS4wOC4zLDEuNy42OCwzLjM2LDEuMTMsNC45OSw0LjIxLDE1LjI1LDE0Ljg0LDI3LjM1LDI4LjM3LDMzLjgyLDMuMDcsMS40Nyw2LjI5LDIuNjUsOS42MSwzLjUxLDcuMTYsMS44NSwxNC44MSwyLjI0LDIyLjU3Ljg3bC0xOC40OS0xMDQuODdjLTcuNzUsMS4zNy0xNC44Miw0LjM1LTIwLjkxLDguNTQtMi44MywxLjk1LTUuNDUsNC4xNS03LjgzLDYuNThaIi8+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMyIgZD0ibTY5LjgyLDEzNS4yMWMtMy4zMy0uODYtNi41NC0yLjA0LTkuNjEtMy41MS0xMy41NC02LjQ3LTI0LjE2LTE4LjU2LTI4LjM3LTMzLjgyLS40NS0xLjYzLS44My0zLjI5LTEuMTMtNC45OS0uMy0xLjctLjUxLTMuMzktLjY1LTUuMDgtMS4yNi0xNS43OCw0LjU5LTMwLjc3LDE1LjEtNDEuNDgsMi4zOC0yLjQzLDUtNC42NCw3LjgzLTYuNTgsNi4wOS00LjE5LDEzLjE1LTcuMTcsMjAuOTEtOC41NGwtNS4yOC0yOS45M2MtNi42MiwxLjE3LTEyLjkxLDMuMDktMTguODEsNS42NS0xLjQyLjYyLTIuMjMsMi4xMy0xLjk2LDMuNjZsMS43NSw5Ljk0Yy4yNCwxLjM4LS40LDIuNzYtMS42MSwzLjQ4LTYuNjUsMy45Mi0xMi41Myw4LjktMTcuNDYsMTQuNjctLjkxLDEuMDctMi4zOSwxLjQ3LTMuNzEuOTlsLTkuNDktMy40NWMtMS40NS0uNTMtMy4wOSwwLTMuOTQsMS4yOUM2LjIxLDQ4LjM1LDEuNTMsNjAuODguMDIsNzQuMTZjLS4xOCwxLjU0Ljc0LDMsMi4xOSwzLjUzbDkuNSwzLjQ2YzEuMzIuNDgsMi4xOSwxLjczLDIuMjEsMy4xMy4wNCwzLjc2LjM4LDcuNTcsMS4wNiwxMS4zOS42NywzLjgzLDEuNjUsNy41MiwyLjksMTEuMDcuNDcsMS4zMi4wNywyLjgtMSwzLjdsLTcuNzQsNi41Yy0xLjE5LDEtMS41NCwyLjY4LS44NSw0LjA2LDUuOTYsMTEuOTYsMTQuNjQsMjIuMTMsMjUuMSwyOS44OCwxLjI0LjkyLDIuOTYuODYsNC4xNS0uMTRsNy43My02LjQ5YzEuMDgtLjksMi42LTEuMDMsMy44Mi0uMzQsNi42LDMuNzQsMTMuODMsNi40MSwyMS40Miw3LjgyLDEuMzguMjYsMi40NiwxLjMzLDIuNywyLjcybDEuNzUsOS45NGMuMjcsMS41MiwxLjU1LDIuNjgsMy4wOSwyLjc3LDYuNDIuMzksMTMsLjA0LDE5LjYxLTEuMTNsLTUuMjgtMjkuOTNjLTcuNzUsMS4zNy0xNS40MS45OC0yMi41Ny0uODdaIi8+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTE2NC4wNiw4OS42MWwtOS41LTMuNDZjLTEuMzItLjQ4LTIuMTktMS43My0yLjIxLTMuMTMtLjA0LTMuNzYtLjM4LTcuNTctMS4wNi0xMS4zOS0uNjctMy44My0xLjY1LTcuNTItMi45LTExLjA3LS40Ny0xLjMyLS4wNy0yLjgsMS0zLjdsNy43NC02LjVjMS4xOS0xLDEuNTQtMi42OC44NS00LjA2LTUuOTYtMTEuOTYtMTQuNjQtMjIuMTMtMjUuMS0yOS44OC0xLjI0LS45Mi0yLjk2LS44Ni00LjE1LjE0bC03LjczLDYuNDljLTEuMDguOS0yLjYsMS4wMy0zLjgyLjM0LTYuNi0zLjc0LTEzLjgzLTYuNDEtMjEuNDItNy44Mi0xLjM4LS4yNi0yLjQ2LTEuMzMtMi43LTIuNzJsLTEuNzUtOS45NGMtLjI3LTEuNTItMS41NS0yLjY4LTMuMDktMi43Ny02LjQyLS4zOS0xMi45OS0uMDQtMTkuNjEsMS4xM2w1LjI4LDI5LjkzaDBjNy43NS0xLjM3LDE1LjQxLS45OCwyMi41Ny44NywzLjMzLjg2LDYuNTQsMi4wNCw5LjYxLDMuNTEsMTMuNTQsNi40NywyNC4xNiwxOC41NiwyOC4zNywzMy44Mi40NSwxLjYzLjgzLDMuMjksMS4xMyw0Ljk5LjMsMS43LjUxLDMuMzkuNjUsNS4wOCwxLjI2LDE1Ljc4LTQuNTksMzAuNzctMTUuMSw0MS40OC0yLjM4LDIuNDMtNSw0LjY0LTcuODMsNi41OC02LjA5LDQuMTktMTMuMTUsNy4xNy0yMC45MSw4LjU0aDBsNS4yOCwyOS45M2M2LjYyLTEuMTcsMTIuOTEtMy4wOSwxOC44MS01LjY1LDEuNDItLjYyLDIuMjMtMi4xMywxLjk2LTMuNjZsLTEuNzUtOS45NGMtLjI0LTEuMzguNC0yLjc2LDEuNjEtMy40OCw2LjY1LTMuOTIsMTIuNTMtOC45LDE3LjQ2LTE0LjY3LjkxLTEuMDcsMi4zOS0xLjQ3LDMuNzEtLjk5bDkuNDksMy40NWMxLjQ1LjUzLDMuMDksMCwzLjk0LTEuMjksNy4xOC0xMC44NSwxMS44Ni0yMy4zOCwxMy4zNy0zNi42Ni4xOC0xLjU0LS43NC0zLTIuMTktMy41M1oiLz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPg==";
+const STRIP = "data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8yIiBkYXRhLW5hbWU9IkNhcGEgMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgODAzLjAyIDI2NiI+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5jbHMtMSB7CiAgICAgICAgZmlsbDogI2YxYzI1MDsKICAgICAgfQoKICAgICAgLmNscy0yIHsKICAgICAgICBmaWxsOiBub25lOwogICAgICB9CgogICAgICAuY2xzLTMgewogICAgICAgIGZpbGw6ICNmMmU2Y2M7CiAgICAgIH0KCiAgICAgIC5jbHMtNCB7CiAgICAgICAgZmlsbDogIzJlYmRlZjsKICAgICAgfQogICAgPC9zdHlsZT4KICA8L2RlZnM+CiAgPGcgaWQ9IkNhcGFfMS0yIiBkYXRhLW5hbWU9IkNhcGEgMSI+CiAgICA8cmVjdCBjbGFzcz0iY2xzLTQiIHdpZHRoPSI4MDMuMDIiIGhlaWdodD0iMjY2Ii8+CiAgICA8Zz4KICAgICAgPHBhdGggY2xhc3M9ImNscy0yIiBkPSJtNDExLjE3LDE4OC43OGM3Ljc1LTEuMzcsMTQuODItNC4zNSwyMC45MS04LjU0LDIuODMtMS45NSw1LjQ1LTQuMTUsNy44My02LjU4LDEwLjUxLTEwLjcxLDE2LjM1LTI1LjcxLDE1LjEtNDEuNDgtLjEzLTEuNjktLjM1LTMuMzgtLjY1LTUuMDgtLjMtMS43LS42OC0zLjM2LTEuMTMtNC45OS00LjIxLTE1LjI1LTE0Ljg0LTI3LjM1LTI4LjM3LTMzLjgyLTMuMDctMS40Ny02LjI5LTIuNjUtOS42MS0zLjUxLTcuMTUtMS44NS0xNC44MS0yLjI0LTIyLjU3LS44N2gwczE4LjQ5LDEwNC44NywxOC40OSwxMDQuODdoMFoiLz4KICAgICAgPHBhdGggY2xhc3M9ImNscy0yIiBkPSJtMzYzLjk0LDk5LjAzYy0xMC41MSwxMC43MS0xNi4zNSwyNS43MS0xNS4xLDQxLjQ4LjEzLDEuNjguMzUsMy4zOC42NSw1LjA4LjMsMS43LjY4LDMuMzYsMS4xMyw0Ljk5LDQuMjEsMTUuMjUsMTQuODQsMjcuMzUsMjguMzcsMzMuODIsMy4wNywxLjQ3LDYuMjksMi42NSw5LjYxLDMuNTEsNy4xNiwxLjg1LDE0LjgxLDIuMjQsMjIuNTcuODdsLTE4LjQ5LTEwNC44N2MtNy43NSwxLjM3LTE0LjgyLDQuMzUtMjAuOTEsOC41NC0yLjgzLDEuOTUtNS40NSw0LjE1LTcuODMsNi41OFoiLz4KICAgICAgPHBhdGggY2xhc3M9ImNscy0zIiBkPSJtMzg4LjYxLDE4Ny45MWMtMy4zMy0uODYtNi41NC0yLjA0LTkuNjEtMy41MS0xMy41NC02LjQ3LTI0LjE2LTE4LjU2LTI4LjM3LTMzLjgyLS40NS0xLjYzLS44My0zLjI5LTEuMTMtNC45OS0uMy0xLjctLjUxLTMuMzktLjY1LTUuMDgtMS4yNi0xNS43OCw0LjU5LTMwLjc3LDE1LjEtNDEuNDgsMi4zOC0yLjQzLDUtNC42NCw3LjgzLTYuNTgsNi4wOS00LjE5LDEzLjE1LTcuMTcsMjAuOTEtOC41NGwtNS4yOC0yOS45M2MtNi42MiwxLjE3LTEyLjkxLDMuMDktMTguODEsNS42NS0xLjQyLjYyLTIuMjMsMi4xMy0xLjk2LDMuNjZsMS43NSw5Ljk0Yy4yNCwxLjM4LS40LDIuNzYtMS42MSwzLjQ4LTYuNjUsMy45Mi0xMi41Myw4LjktMTcuNDYsMTQuNjctLjkxLDEuMDctMi4zOSwxLjQ3LTMuNzEuOTlsLTkuNDktMy40NWMtMS40NS0uNTMtMy4wOSwwLTMuOTQsMS4yOS03LjE4LDEwLjg1LTExLjg2LDIzLjM4LTEzLjM3LDM2LjY2LS4xOCwxLjU0Ljc0LDMsMi4xOSwzLjUzbDkuNSwzLjQ2YzEuMzIuNDgsMi4xOSwxLjczLDIuMjEsMy4xMy4wNCwzLjc2LjM4LDcuNTcsMS4wNiwxMS4zOS42NywzLjgzLDEuNjUsNy41MiwyLjksMTEuMDcuNDcsMS4zMi4wNywyLjgtMSwzLjdsLTcuNzQsNi41Yy0xLjE5LDEtMS41NCwyLjY4LS44NSw0LjA2LDUuOTYsMTEuOTYsMTQuNjQsMjIuMTMsMjUuMSwyOS44OCwxLjI0LjkyLDIuOTYuODYsNC4xNS0uMTRsNy43My02LjQ5YzEuMDgtLjksMi42LTEuMDMsMy44Mi0uMzQsNi42LDMuNzQsMTMuODMsNi40MSwyMS40Miw3LjgyLDEuMzguMjYsMi40NiwxLjMzLDIuNywyLjcybDEuNzUsOS45NGMuMjcsMS41MiwxLjU1LDIuNjgsMy4wOSwyLjc3LDYuNDIuMzksMTMsLjA0LDE5LjYxLTEuMTNsLTUuMjgtMjkuOTNjLTcuNzUsMS4zNy0xNS40MS45OC0yMi41Ny0uODdaIi8+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTQ4Mi44NSwxNDIuMzFsLTkuNS0zLjQ2Yy0xLjMyLS40OC0yLjE5LTEuNzMtMi4yMS0zLjEzLS4wNC0zLjc2LS4zOC03LjU3LTEuMDYtMTEuMzktLjY3LTMuODMtMS42NS03LjUyLTIuOS0xMS4wNy0uNDctMS4zMi0uMDctMi44LDEtMy43bDcuNzQtNi41YzEuMTktMSwxLjU0LTIuNjguODUtNC4wNi01Ljk2LTExLjk2LTE0LjY0LTIyLjEzLTI1LjEtMjkuODgtMS4yNC0uOTItMi45Ni0uODYtNC4xNS4xNGwtNy43Myw2LjQ5Yy0xLjA4LjktMi42LDEuMDMtMy44Mi4zNC02LjYtMy43NC0xMy44My02LjQxLTIxLjQyLTcuODItMS4zOC0uMjYtMi40Ni0xLjMzLTIuNy0yLjcybC0xLjc1LTkuOTRjLS4yNy0xLjUyLTEuNTUtMi42OC0zLjA5LTIuNzctNi40Mi0uMzktMTIuOTktLjA0LTE5LjYxLDEuMTNsNS4yOCwyOS45M2gwYzcuNzUtMS4zNywxNS40MS0uOTgsMjIuNTcuODcsMy4zMy44Niw2LjU0LDIuMDQsOS42MSwzLjUxLDEzLjU0LDYuNDcsMjQuMTYsMTguNTYsMjguMzcsMzMuODIuNDUsMS42My44MywzLjI5LDEuMTMsNC45OS4zLDEuNy41MSwzLjM5LjY1LDUuMDgsMS4yNiwxNS43OC00LjU5LDMwLjc3LTE1LjEsNDEuNDgtMi4zOCwyLjQzLTUsNC42NC03LjgzLDYuNTgtNi4wOSw0LjE5LTEzLjE1LDcuMTctMjAuOTEsOC41NGgwbDUuMjgsMjkuOTNjNi42Mi0xLjE3LDEyLjkxLTMuMDksMTguODEtNS42NSwxLjQyLS42MiwyLjIzLTIuMTMsMS45Ni0zLjY2bC0xLjc1LTkuOTRjLS4yNC0xLjM4LjQtMi43NiwxLjYxLTMuNDgsNi42NS0zLjkyLDEyLjUzLTguOSwxNy40Ni0xNC42Ny45MS0xLjA3LDIuMzktMS40NywzLjcxLS45OWw5LjQ5LDMuNDVjMS40NS41MywzLjA5LDAsMy45NC0xLjI5LDcuMTgtMTAuODUsMTEuODYtMjMuMzgsMTMuMzctMzYuNjYuMTgtMS41NC0uNzQtMy0yLjE5LTMuNTNaIi8+CiAgICA8L2c+CiAgICA8Zz4KICAgICAgPHBhdGggY2xhc3M9ImNscy0yIiBkPSJtMTgzLjIzLDE4OC43OGM3Ljc1LTEuMzcsMTQuODItNC4zNSwyMC45MS04LjU0LDIuODMtMS45NSw1LjQ1LTQuMTUsNy44My02LjU4LDEwLjUxLTEwLjcxLDE2LjM1LTI1LjcxLDE1LjEtNDEuNDgtLjEzLTEuNjktLjM1LTMuMzgtLjY1LTUuMDgtLjMtMS43LS42OC0zLjM2LTEuMTMtNC45OS00LjIxLTE1LjI1LTE0Ljg0LTI3LjM1LTI4LjM3LTMzLjgyLTMuMDctMS40Ny02LjI5LTIuNjUtOS42MS0zLjUxLTcuMTUtMS44NS0xNC44MS0yLjI0LTIyLjU3LS44N2gwczE4LjQ5LDEwNC44NywxOC40OSwxMDQuODdoMFoiLz4KICAgICAgPHBhdGggY2xhc3M9ImNscy0yIiBkPSJtMTM2LDk5LjAzYy0xMC41MSwxMC43MS0xNi4zNSwyNS43MS0xNS4xLDQxLjQ4LjEzLDEuNjguMzUsMy4zOC42NSw1LjA4LjMsMS43LjY4LDMuMzYsMS4xMyw0Ljk5LDQuMjEsMTUuMjUsMTQuODQsMjcuMzUsMjguMzcsMzMuODIsMy4wNywxLjQ3LDYuMjksMi42NSw5LjYxLDMuNTEsNy4xNiwxLjg1LDE0LjgxLDIuMjQsMjIuNTcuODdsLTE4LjQ5LTEwNC44N2MtNy43NSwxLjM3LTE0LjgyLDQuMzUtMjAuOTEsOC41NC0yLjgzLDEuOTUtNS40NSw0LjE1LTcuODMsNi41OFoiLz4KICAgICAgPHBhdGggY2xhc3M9ImNscy0zIiBkPSJtMTYwLjY3LDE4Ny45MWMtMy4zMy0uODYtNi41NC0yLjA0LTkuNjEtMy41MS0xMy41NC02LjQ3LTI0LjE2LTE4LjU2LTI4LjM3LTMzLjgyLS40NS0xLjYzLS44My0zLjI5LTEuMTMtNC45OS0uMy0xLjctLjUxLTMuMzktLjY1LTUuMDgtMS4yNi0xNS43OCw0LjU5LTMwLjc3LDE1LjEtNDEuNDgsMi4zOC0yLjQzLDUtNC42NCw3LjgzLTYuNTgsNi4wOS00LjE5LDEzLjE1LTcuMTcsMjAuOTEtOC41NGwtNS4yOC0yOS45M2MtNi42MiwxLjE3LTEyLjkxLDMuMDktMTguODEsNS42NS0xLjQyLjYyLTIuMjMsMi4xMy0xLjk2LDMuNjZsMS43NSw5Ljk0Yy4yNCwxLjM4LS40LDIuNzYtMS42MSwzLjQ4LTYuNjUsMy45Mi0xMi41Myw4LjktMTcuNDYsMTQuNjctLjkxLDEuMDctMi4zOSwxLjQ3LTMuNzEuOTlsLTkuNDktMy40NWMtMS40NS0uNTMtMy4wOSwwLTMuOTQsMS4yOS03LjE4LDEwLjg1LTExLjg2LDIzLjM4LTEzLjM3LDM2LjY2LS4xOCwxLjU0Ljc0LDMsMi4xOSwzLjUzbDkuNSwzLjQ2YzEuMzIuNDgsMi4xOSwxLjczLDIuMjEsMy4xMy4wNCwzLjc2LjM4LDcuNTcsMS4wNiwxMS4zOS42NywzLjgzLDEuNjUsNy41MiwyLjksMTEuMDcuNDcsMS4zMi4wNywyLjgtMSwzLjdsLTcuNzQsNi41Yy0xLjE5LDEtMS41NCwyLjY4LS44NSw0LjA2LDUuOTYsMTEuOTYsMTQuNjQsMjIuMTMsMjUuMSwyOS44OCwxLjI0LjkyLDIuOTYuODYsNC4xNS0uMTRsNy43My02LjQ5YzEuMDgtLjksMi42LTEuMDMsMy44Mi0uMzQsNi42LDMuNzQsMTMuODMsNi40MSwyMS40Miw3LjgyLDEuMzguMjYsMi40NiwxLjMzLDIuNywyLjcybDEuNzUsOS45NGMuMjcsMS41MiwxLjU1LDIuNjgsMy4wOSwyLjc3LDYuNDIuMzksMTMsLjA0LDE5LjYxLTEuMTNsLTUuMjgtMjkuOTNjLTcuNzUsMS4zNy0xNS40MS45OC0yMi41Ny0uODdaIi8+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTI1NC45MSwxNDIuMzFsLTkuNS0zLjQ2Yy0xLjMyLS40OC0yLjE5LTEuNzMtMi4yMS0zLjEzLS4wNC0zLjc2LS4zOC03LjU3LTEuMDYtMTEuMzktLjY3LTMuODMtMS42NS03LjUyLTIuOS0xMS4wNy0uNDctMS4zMi0uMDctMi44LDEtMy43bDcuNzQtNi41YzEuMTktMSwxLjU0LTIuNjguODUtNC4wNi01Ljk2LTExLjk2LTE0LjY0LTIyLjEzLTI1LjEtMjkuODgtMS4yNC0uOTItMi45Ni0uODYtNC4xNS4xNGwtNy43Myw2LjQ5Yy0xLjA4LjktMi42LDEuMDMtMy44Mi4zNC02LjYtMy43NC0xMy44My02LjQxLTIxLjQyLTcuODItMS4zOC0uMjYtMi40Ni0xLjMzLTIuNy0yLjcybC0xLjc1LTkuOTRjLS4yNy0xLjUyLTEuNTUtMi42OC0zLjA5LTIuNzctNi40Mi0uMzktMTIuOTktLjA0LTE5LjYxLDEuMTNsNS4yOCwyOS45M2gwYzcuNzUtMS4zNywxNS40MS0uOTgsMjIuNTcuODcsMy4zMy44Niw2LjU0LDIuMDQsOS42MSwzLjUxLDEzLjU0LDYuNDcsMjQuMTYsMTguNTYsMjguMzcsMzMuODIuNDUsMS42My44MywzLjI5LDEuMTMsNC45OS4zLDEuNy41MSwzLjM5LjY1LDUuMDgsMS4yNiwxNS43OC00LjU5LDMwLjc3LTE1LjEsNDEuNDgtMi4zOCwyLjQzLTUsNC42NC03LjgzLDYuNTgtNi4wOSw0LjE5LTEzLjE1LDcuMTctMjAuOTEsOC41NGgwbDUuMjgsMjkuOTNjNi42Mi0xLjE3LDEyLjkxLTMuMDksMTguODEtNS42NSwxLjQyLS42MiwyLjIzLTIuMTMsMS45Ni0zLjY2bC0xLjc1LTkuOTRjLS4yNC0xLjM4LjQtMi43NiwxLjYxLTMuNDgsNi42NS0zLjkyLDEyLjUzLTguOSwxNy40Ni0xNC42Ny45MS0xLjA3LDIuMzktMS40NywzLjcxLS45OWw5LjQ5LDMuNDVjMS40NS41MywzLjA5LDAsMy45NC0xLjI5LDcuMTgtMTAuODUsMTEuODYtMjMuMzgsMTMuMzctMzYuNjYuMTgtMS41NC0uNzQtMy0yLjE5LTMuNTNaIi8+CiAgICA8L2c+CiAgICA8Zz4KICAgICAgPHBhdGggY2xhc3M9ImNscy0yIiBkPSJtNjM5LjExLDE4OC43OGM3Ljc1LTEuMzcsMTQuODItNC4zNSwyMC45MS04LjU0LDIuODMtMS45NSw1LjQ1LTQuMTUsNy44My02LjU4LDEwLjUxLTEwLjcxLDE2LjM1LTI1LjcxLDE1LjEtNDEuNDgtLjEzLTEuNjktLjM1LTMuMzgtLjY1LTUuMDgtLjMtMS43LS42OC0zLjM2LTEuMTMtNC45OS00LjIxLTE1LjI1LTE0Ljg0LTI3LjM1LTI4LjM3LTMzLjgyLTMuMDctMS40Ny02LjI5LTIuNjUtOS42MS0zLjUxLTcuMTUtMS44NS0xNC44MS0yLjI0LTIyLjU3LS44N2gwczE4LjQ5LDEwNC44NywxOC40OSwxMDQuODdoMFoiLz4KICAgICAgPHBhdGggY2xhc3M9ImNscy0yIiBkPSJtNTkxLjg4LDk5LjAzYy0xMC41MSwxMC43MS0xNi4zNSwyNS43MS0xNS4xLDQxLjQ4LjEzLDEuNjguMzUsMy4zOC42NSw1LjA4LjMsMS43LjY4LDMuMzYsMS4xMyw0Ljk5LDQuMjEsMTUuMjUsMTQuODQsMjcuMzUsMjguMzcsMzMuODIsMy4wNywxLjQ3LDYuMjksMi42NSw5LjYxLDMuNTEsNy4xNiwxLjg1LDE0LjgxLDIuMjQsMjIuNTcuODdsLTE4LjQ5LTEwNC44N2MtNy43NSwxLjM3LTE0LjgyLDQuMzUtMjAuOTEsOC41NC0yLjgzLDEuOTUtNS40NSw0LjE1LTcuODMsNi41OFoiLz4KICAgICAgPHBhdGggY2xhc3M9ImNscy0zIiBkPSJtNjE2LjU1LDE4Ny45MWMtMy4zMy0uODYtNi41NC0yLjA0LTkuNjEtMy41MS0xMy41NC02LjQ3LTI0LjE2LTE4LjU2LTI4LjM3LTMzLjgyLS40NS0xLjYzLS44My0zLjI5LTEuMTMtNC45OS0uMy0xLjctLjUxLTMuMzktLjY1LTUuMDgtMS4yNi0xNS43OCw0LjU5LTMwLjc3LDE1LjEtNDEuNDgsMi4zOC0yLjQzLDUtNC42NCw3LjgzLTYuNTgsNi4wOS00LjE5LDEzLjE1LTcuMTcsMjAuOTEtOC41NGwtNS4yOC0yOS45M2MtNi42MiwxLjE3LTEyLjkxLDMuMDktMTguODEsNS42NS0xLjQyLjYyLTIuMjMsMi4xMy0xLjk2LDMuNjZsMS43NSw5Ljk0Yy4yNCwxLjM4LS40LDIuNzYtMS42MSwzLjQ4LTYuNjUsMy45Mi0xMi41Myw4LjktMTcuNDYsMTQuNjctLjkxLDEuMDctMi4zOSwxLjQ3LTMuNzEuOTlsLTkuNDktMy40NWMtMS40NS0uNTMtMy4wOSwwLTMuOTQsMS4yOS03LjE4LDEwLjg1LTExLjg2LDIzLjM4LTEzLjM3LDM2LjY2LS4xOCwxLjU0Ljc0LDMsMi4xOSwzLjUzbDkuNSwzLjQ2YzEuMzIuNDgsMi4xOSwxLjczLDIuMjEsMy4xMy4wNCwzLjc2LjM4LDcuNTcsMS4wNiwxMS4zOS42NywzLjgzLDEuNjUsNy41MiwyLjksMTEuMDcuNDcsMS4zMi4wNywyLjgtMSwzLjdsLTcuNzQsNi41Yy0xLjE5LDEtMS41NCwyLjY4LS44NSw0LjA2LDUuOTYsMTEuOTYsMTQuNjQsMjIuMTMsMjUuMSwyOS44OCwxLjI0LjkyLDIuOTYuODYsNC4xNS0uMTRsNy43My02LjQ5YzEuMDgtLjksMi42LTEuMDMsMy44Mi0uMzQsNi42LDMuNzQsMTMuODMsNi40MSwyMS40Miw3LjgyLDEuMzguMjYsMi40NiwxLjMzLDIuNywyLjcybDEuNzUsOS45NGMuMjcsMS41MiwxLjU1LDIuNjgsMy4wOSwyLjc3LDYuNDIuMzksMTMsLjA0LDE5LjYxLTEuMTNsLTUuMjgtMjkuOTNjLTcuNzUsMS4zNy0xNS40MS45OC0yMi41Ny0uODdaIi8+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTcxMC43OSwxNDIuMzFsLTkuNS0zLjQ2Yy0xLjMyLS40OC0yLjE5LTEuNzMtMi4yMS0zLjEzLS4wNC0zLjc2LS4zOC03LjU3LTEuMDYtMTEuMzktLjY3LTMuODMtMS42NS03LjUyLTIuOS0xMS4wNy0uNDctMS4zMi0uMDctMi44LDEtMy43bDcuNzQtNi41YzEuMTktMSwxLjU0LTIuNjguODUtNC4wNi01Ljk2LTExLjk2LTE0LjY0LTIyLjEzLTI1LjEtMjkuODgtMS4yNC0uOTItMi45Ni0uODYtNC4xNS4xNGwtNy43Myw2LjQ5Yy0xLjA4LjktMi42LDEuMDMtMy44Mi4zNC02LjYtMy43NC0xMy44My02LjQxLTIxLjQyLTcuODItMS4zOC0uMjYtMi40Ni0xLjMzLTIuNy0yLjcybC0xLjc1LTkuOTRjLS4yNy0xLjUyLTEuNTUtMi42OC0zLjA5LTIuNzctNi40Mi0uMzktMTIuOTktLjA0LTE5LjYxLDEuMTNsNS4yOCwyOS45M2gwYzcuNzUtMS4zNywxNS40MS0uOTgsMjIuNTcuODcsMy4zMy44Niw2LjU0LDIuMDQsOS42MSwzLjUxLDEzLjU0LDYuNDcsMjQuMTYsMTguNTYsMjguMzcsMzMuODIuNDUsMS42My44MywzLjI5LDEuMTMsNC45OS4zLDEuNy41MSwzLjM5LjY1LDUuMDgsMS4yNiwxNS43OC00LjU5LDMwLjc3LTE1LjEsNDEuNDgtMi4zOCwyLjQzLTUsNC42NC03LjgzLDYuNTgtNi4wOSw0LjE5LTEzLjE1LDcuMTctMjAuOTEsOC41NGgwbDUuMjgsMjkuOTNjNi42Mi0xLjE3LDEyLjkxLTMuMDksMTguODEtNS42NSwxLjQyLS42MiwyLjIzLTIuMTMsMS45Ni0zLjY2bC0xLjc1LTkuOTRjLS4yNC0xLjM4LjQtMi43NiwxLjYxLTMuNDgsNi42NS0zLjkyLDEyLjUzLTguOSwxNy40Ni0xNC42Ny45MS0xLjA3LDIuMzktMS40NywzLjcxLS45OWw5LjQ5LDMuNDVjMS40NS41MywzLjA5LDAsMy45NC0xLjI5LDcuMTgtMTAuODUsMTEuODYtMjMuMzgsMTMuMzctMzYuNjYuMTgtMS41NC0uNzQtMy0yLjE5LTMuNTNaIi8+CiAgICA8L2c+CiAgPC9nPgo8L3N2Zz4=";
+
+const SAMPLE_CV = `VALENTINA RUIZ GÓMEZ  (perfil de ejemplo)
+Estudiante de Ingeniería Biomédica, 7.º semestre · Universidad de los Andes
+valentina.ruiz@ejemplo.co · +57 300 000 0000 · linkedin.com/in/valentina-ruiz-gomez
+
+PERFIL
+Estudiante proactiva, responsable y con gran capacidad de trabajo en equipo, apasionada por la innovación en salud.
+
+EXPERIENCIA
+Semillero bitt — Uniandes | Integrante de proyecto (2025–actualidad)
+- Participé en el desarrollo de un dispositivo para rehabilitación de mano.
+- Diseñé en SolidWorks 3 versiones de una férula y las imprimí en 3D, reduciendo el peso 35 %.
+- Encargada de la documentación del proyecto.
+
+Monitora de Fisiología — Departamento de Ingeniería Biomédica (2024–2025)
+- Apoyé a los estudiantes en los laboratorios.
+- Preparé 12 guías de laboratorio usadas por 90 estudiantes por semestre.
+
+PROYECTOS
+- Oxímetro de pulso con Arduino: construí y calibré el prototipo frente a un equipo comercial.
+- Análisis de señales ECG en Python para detección de arritmias.
+
+EDUCACIÓN
+Universidad de los Andes — Ingeniería Biomédica (2022–2026). Promedio 4.1
+
+HABILIDADES
+SolidWorks, impresión 3D, Python, MATLAB, Arduino, trabajo en equipo, liderazgo.
+
+IDIOMAS
+Español (nativo), Inglés (B2)`;
+
+const SAMPLE_LI = {
+  titular: 'Estudiante de Ingeniería Biomédica en la Universidad de los Andes',
+  acerca: 'Soy estudiante de Ingeniería Biomédica, apasionada y proactiva. Me gusta el trabajo en equipo y aprender cosas nuevas.',
+  experiencia: `Integrante de proyecto — Semillero bitt (2025–actualidad)
+Participé en el desarrollo de un dispositivo de rehabilitación de mano.
+Diseñé 3 versiones de una férula en SolidWorks y reduje el peso 35 %.
+
+Monitora de Fisiología — Uniandes (2024–2025)
+Apoyé a los estudiantes en los laboratorios.`,
+  url: 'linkedin.com/in/valentina-ruiz-gomez-3a91b2204'
+};
+
+const SAMPLE_VACANTE = `Practicante de I+D – Dispositivos médicos. Buscamos estudiante de Ingeniería Biomédica o Mecánica para apoyar el diseño y verificación de prototipos. Requisitos: manejo de SolidWorks o CAD, impresión 3D, conocimiento de pruebas de verificación y validación, documentación bajo ISO 13485, análisis de datos en Python o MATLAB, inglés intermedio. Deseable: experiencia con design control e ISO 14971 (gestión de riesgo).`;
+
+function load(k){ try{ return JSON.parse(localStorage.getItem(k)||'null'); }catch(e){ return null; } }
+function save(k,v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
+
+async function pdfToText(file){
+  const buf = await file.arrayBuffer();
+  const pdf = await window.pdfjsLib.getDocument({data:buf}).promise;
+  const pages=[];
+  for(let p=1;p<=pdf.numPages;p++){
+    const page=await pdf.getPage(p); const tc=await page.getTextContent();
+    pages.push({w:page.view[2], items:tc.items.filter(it=>it.str.trim()!=='' || it.str===' ')});
+  }
+  const toLines = items => { const out=[]; let lastY=null, line='';
+    items.forEach(it=>{ const y=Math.round(it.transform[5]); if(lastY!==null && Math.abs(y-lastY)>3){ out.push(line); line=''; } line+=(line&&!line.endsWith(' ')&&!it.str.startsWith(' ')?' ':'')+it.str; lastY=y; });
+    out.push(line); return out; };
+  const flat = pages.flatMap(pg=>pg.items.map(i=>i.str)).join(' ');
+  // El PDF de LinkedIn tiene una columna lateral (contacto, aptitudes, idiomas): la leemos aparte
+  const isLinkedIn = /linkedin\.com\/in\//i.test(flat) && /\b(Contactar|Contact)\b/.test(flat);
+  let main=[], side=[];
+  pages.forEach(pg=>{
+    if(isLinkedIn){
+      const cut=pg.w*0.3;
+      main.push(...toLines(pg.items.filter(i=>i.transform[4]>=cut)));
+      side.push(...toLines(pg.items.filter(i=>i.transform[4]<cut)));
+    } else main.push(...toLines(pg.items));
+  });
+  return [...main, ...side].map(s=>s.replace(/\s+/g,' ').trim()).filter(Boolean).join('\n');
+}
+function splitLinkedInPdf(txt){
+  const L=txt.split('\n').map(s=>s.trim()).filter(Boolean);
+  const idx=re=>L.findIndex(l=>re.test(l));
+  const iS=idx(/^(extracto|summary|acerca de|about)$/i);
+  const iE=idx(/^(experiencia|experience)$/i);
+  const iEd=idx(/^(educaci[oó]n|education)$/i);
+  const acerca = iS>=0 ? L.slice(iS+1, iE>iS?iE:undefined).join('\n') : '';
+  const experiencia = iE>=0 ? L.slice(iE+1, iEd>iE?iEd:undefined).join('\n') : txt;
+  const um = txt.replace(/\s+/g,' ').match(/(?:www\.)?linkedin\.com\/in\/[A-Za-z0-9\-_%]+/i);
+  let titular='';
+  const end = iS>=0 ? iS : (iE>=0 ? iE : -1);
+  if(end>1){
+    const cand=L.slice(Math.max(0,end-4), end).filter(l=>l.length>15 && !/linkedin\.com|@|\(LinkedIn\)|^p[aá]gina|^page/i.test(l));
+    const loc=/,\s*(colombia|bogot|medell|cali|distrito|estados unidos|united states|m[eé]xico|espa)/i;
+    titular = (cand.filter(l=>!loc.test(l)).sort((x,y)=>y.length-x.length)[0]||'');
+  }
+  return {acerca, experiencia, url: um?um[0]:'', titular};
+}
+
+function Dropzone({mode,onPick,onDrop}){
+  const [over,setOver]=useState(false);
+  return <div onDragOver={e=>{e.preventDefault();setOver(true);}} onDragLeave={()=>setOver(false)}
+    onDrop={e=>{e.preventDefault();setOver(false);onDrop(e.dataTransfer.files?.[0]);}}
+    className={"rounded-2xl border-2 border-dashed p-4 sm:p-5 flex flex-col sm:flex-row gap-4 sm:items-center transition "+(over?'border-sky bg-accentsoft':'border-[#9CC3F2] bg-surface2')}>
+    <div className="flex-1 min-w-0">
+      <div className="font-extrabold text-bitt">{mode==='cv'?'Sube tu CV en PDF':'Sube tu perfil de LinkedIn en PDF'}</div>
+      {mode==='cv'
+        ? <p className="text-sm text-muted mt-0.5">Arrástralo aquí o búscalo en tu computador. Se analiza al instante.</p>
+        : <ol className="text-sm text-muted mt-1 list-decimal pl-5 space-y-0.5">
+            <li>Abre tu perfil en LinkedIn desde el computador.</li>
+            <li>Toca <b className="text-fg">Recursos</b> (o <b className="text-fg">Más</b>) debajo de tu foto y elige <b className="text-fg">Guardar en PDF</b>.</li>
+            <li>Arrastra ese PDF aquí.</li>
+          </ol>}
+    </div>
+    <button onClick={onPick} className="shrink-0 rounded-xl bg-bitt text-white font-bold px-4 py-2.5 hover:brightness-110">Elegir archivo</button>
+  </div>;
+}
+
+/* ===== Revisor de foto de perfil (todo en el navegador, sin IA) ===== */
+function analyzePhoto(img){
+  const W=img.naturalWidth, H=img.naturalHeight;
+  const S=256, c=document.createElement('canvas'); c.width=S; c.height=S;
+  const ctx=c.getContext('2d',{willReadFrequently:true});
+  // recorte cuadrado central, como lo muestra LinkedIn
+  const side=Math.min(W,H), sx=(W-side)/2, sy=(H-side)/2;
+  ctx.drawImage(img,sx,sy,side,side,0,0,S,S);
+  const d=ctx.getImageData(0,0,S,S).data;
+  const g=new Float32Array(S*S);
+  for(let i=0;i<S*S;i++) g[i]=(0.2126*d[i*4]+0.7152*d[i*4+1]+0.0722*d[i*4+2])/255;
+  let sum=0; for(const v of g) sum+=v; const mean=sum/g.length;
+  let vs=0; for(const v of g) vs+=(v-mean)**2; const std=Math.sqrt(vs/g.length);
+  // nitidez: varianza del laplaciano
+  let lap=[], ls=0; for(let y=1;y<S-1;y++) for(let x=1;x<S-1;x++){ const i=y*S+x; const v=(4*g[i]-g[i-1]-g[i+1]-g[i-S]-g[i+S])*255; lap.push(v); ls+=v; }
+  const lm=ls/lap.length; let lv=0; for(const v of lap) lv+=(v-lm)**2; lv/=lap.length;
+  // fondo: borde de la imagen vs centro
+  const border=[], center=[]; const b=Math.round(S*0.12);
+  for(let y=0;y<S;y++) for(let x=0;x<S;x++){ const v=g[y*S+x]; if(x<b||y<b||x>=S-b) border.push(v); const dx=x-S/2, dy=y-S*0.45; if(dx*dx+dy*dy<(S*0.22)**2) center.push(v); }
+  const m=a=>a.reduce((p,q)=>p+q,0)/a.length, sd=a=>{const mm=m(a); return Math.sqrt(a.reduce((p,q)=>p+(q-mm)**2,0)/a.length);};
+  const bstd=sd(border), bmean=m(border), cmean=m(center);
+  const checks=[];
+  const add=(ok,label,detail)=>checks.push({ok,label,detail});
+  add(Math.min(W,H)>=400?'good':Math.min(W,H)>=200?'warn':'bad','Resolución', `${W}×${H} px. ${Math.min(W,H)>=400?'Suficiente para que se vea nítida.':'LinkedIn recomienda al menos 400×400 px; súbela en mejor calidad.'}`);
+  const ar=W/H; add(ar>=0.9&&ar<=1.1?'good':'warn','Formato', ar>=0.9&&ar<=1.1?'Casi cuadrada: el recorte circular no te corta.':'No es cuadrada. LinkedIn la recorta en círculo; revisa en la vista previa que no se corte tu cara.');
+  add(mean>=0.35&&mean<=0.78?'good':'warn','Luz', mean<0.35?'Se ve oscura. Toma la foto de frente a una ventana o con más luz.':mean>0.78?'Se ve muy clara o quemada. Baja un poco la exposición.':'Buena iluminación general.');
+  add(std>=0.15?'good':std>=0.1?'warn':'bad','Contraste', std>=0.15?'Buen contraste.':'Se ve plana o lavada; la cara se pierde con el fondo.');
+  add(lv>=120?'good':lv>=45?'warn':'bad','Nitidez', lv>=120?'Se ve enfocada.':'Parece borrosa o movida. Usa una foto enfocada en tu cara.');
+  add(bstd<=0.14?'good':'warn','Fondo', bstd<=0.14?'Fondo limpio y parejo.':'El fondo tiene mucho detalle. Un fondo liso hace que tú resaltes.');
+  add(Math.abs(cmean-bmean)>=0.06?'good':'warn','Separación del fondo', Math.abs(cmean-bmean)>=0.06?'Te distingues del fondo.':'Tu cara y el fondo tienen un tono parecido; busca un fondo que contraste contigo.');
+  const pts={good:1,warn:0.5,bad:0}; const score=Math.round(100*checks.reduce((a,c)=>a+pts[c.ok],0)/checks.length);
+  return {checks,score,preview:c.toDataURL('image/jpeg',0.85)};
+}
+function PhotoCheck(){
+  const [res,setRes]=useState(null); const [err,setErr]=useState(''); const ref=useRef(null);
+  const [manual,setManual]=useState({});
+  function onFile(f){
+    if(!f) return; setErr('');
+    if(!/^image\//.test(f.type)){ setErr('Sube una imagen (JPG o PNG).'); return; }
+    const url=URL.createObjectURL(f); const img=new Image();
+    img.onload=()=>{ try{ setRes(analyzePhoto(img)); }catch(e){ setErr('No pude leer esa imagen.'); } URL.revokeObjectURL(url); };
+    img.onerror=()=>setErr('No pude abrir esa imagen.'); img.src=url;
+  }
+  const items=['Se te ve la cara completa y ocupa buena parte del círculo','Sales sola o solo, sin recortes de otras personas','Miras a la cámara o casi, con expresión amable','Ropa acorde a cómo te vestirías para una entrevista en tu área','Es reciente y te pareces a esa foto'];
+  const tone={good:['bg-goodsoft','text-good','✓'],warn:['bg-warnsoft','text-warn','!'],bad:['bg-badsoft','text-bad','✕']};
+  return <div className="border-t border-line pt-5 flex flex-col gap-3">
+    <div className="flex items-start justify-between gap-3 flex-wrap">
+      <div className="min-w-0"><div className="text-sm font-bold">Tu foto de perfil (opcional)</div>
+        <p className="text-xs text-muted">No suma al puntaje. Reviso luz, nitidez, tamaño y fondo; lo demás lo marcas tú.</p></div>
+      <button onClick={()=>ref.current?.click()} className="rounded-lg border border-line px-3 py-1.5 text-sm font-bold hover:border-sky">Subir foto</button>
+      <input ref={ref} id="foto" type="file" accept="image/*" className="hidden" onChange={e=>{onFile(e.target.files?.[0]); e.target.value='';}}/>
+    </div>
+    {err && <div className="rounded-xl bg-badsoft text-bad text-sm px-3.5 py-2.5">{err}</div>}
+    {res && <div className="flex flex-col sm:flex-row gap-4">
+      <div className="shrink-0 flex flex-col items-center gap-2">
+        <img src={res.preview} alt="Vista previa de tu foto recortada en círculo" className="w-28 h-28 rounded-full object-cover border-4 border-surface shadow-md"/>
+        <span className="mono text-sm">{res.score}/100</span>
+      </div>
+      <ul className="flex-1 min-w-0 flex flex-col gap-1.5">
+        {res.checks.map(c=><li key={c.label} className="flex gap-2 text-sm items-start">
+          <span className={"shrink-0 w-5 h-5 rounded-full text-xs font-bold flex items-center justify-center "+tone[c.ok][0]+" "+tone[c.ok][1]}>{tone[c.ok][2]}</span>
+          <span className="min-w-0"><b>{c.label}:</b> <span className="text-muted">{c.detail}</span></span></li>)}
+      </ul>
+    </div>}
+    <div className="rounded-xl bg-surface2 p-3.5">
+      <div className="text-xs font-bold uppercase tracking-[.08em] text-accent mb-1.5">Esto lo revisas tú</div>
+      {items.map((it,i)=><label key={i} className="flex gap-2 items-start text-sm py-0.5 cursor-pointer">
+        <input type="checkbox" id={'foto-'+i} className="mt-1 accent-[var(--bitt)]" checked={!!manual[i]} onChange={e=>setManual({...manual,[i]:e.target.checked})}/>
+        <span>{it}</span></label>)}
+    </div>
+  </div>;
+}
+
+function Bar({value,max,tone}){
+  const pct=Math.round(100*value/max);
+  const col = tone || (pct>=75?'var(--good)':pct>=45?'var(--sun)':'var(--bad)');
+  return <div className="h-2.5 w-full rounded-full bg-surface2 overflow-hidden" role="progressbar" aria-valuenow={value} aria-valuemin={0} aria-valuemax={max}>
+    <div className="bar h-full rounded-full" style={{width:pct+'%', background:col}}/>
+  </div>;
+}
+
+function Gauge({score, prev}){
+  const r=54, C=2*Math.PI*r, off=C*(1-score/100);
+  const col = score>=75?'var(--good)':score>=55?'var(--sun)':'var(--bad)';
+  return <div className="relative w-[148px] h-[148px] shrink-0">
+    <svg viewBox="0 0 140 140" className="w-full h-full -rotate-90">
+      <circle cx="70" cy="70" r={r} fill="none" stroke="var(--surface-2)" strokeWidth="14"/>
+      <circle cx="70" cy="70" r={r} fill="none" stroke={col} strokeWidth="14" strokeLinecap="round" strokeDasharray={C} strokeDashoffset={off} style={{transition:'stroke-dashoffset .8s'}}/>
+    </svg>
+    <div className="absolute inset-0 flex flex-col items-center justify-center">
+      <span className="mono text-[44px] leading-none font-medium">{score}</span>
+      <span className="text-xs text-muted mt-1">de 100</span>
+      {prev!=null && prev!==score && <span className={"mono text-xs mt-1 font-medium "+(score>prev?'text-good':'text-bad')}>{score>prev?'▲ +':'▼ '}{score-prev} vs. antes</span>}
+    </div>
+  </div>;
+}
+
+function Field({id,label,hint,children,count,limit}){
+  return <div className="flex flex-col gap-1.5">
+    <div className="flex items-baseline justify-between gap-3">
+      <label htmlFor={id} className="text-sm font-bold">{label}</label>
+      {count!=null && <span className={"mono text-xs "+(limit&&count>limit?'text-bad':'text-muted')}>{count}{limit?` / ${limit}`:''}</span>}
+    </div>
+    {children}
+    {hint && <p className="text-xs text-muted">{hint}</p>}
+  </div>;
+}
+const inputCls="w-full rounded-xl border border-line bg-surface px-3.5 py-2.5 text-[14px] text-fg placeholder:text-muted focus:border-sky focus:outline-none";
+
+function App(){
+  const [mode,setMode]=useState('cv');
+  const [cv,setCv]=useState(SAMPLE_CV);
+  const [li,setLi]=useState(SAMPLE_LI);
+  const [vacante,setVacante]=useState(SAMPLE_VACANTE);
+  const [roleId,setRoleId]=useState('general');
+  const [isSample,setIsSample]=useState(true);
+  const [result,setResult]=useState(null);
+  const [prev,setPrev]=useState(null);
+  const [busy,setBusy]=useState('');
+  const fileRef=useRef(null);
+
+  function run(store, over){
+    const c = over?.cv ?? cv, l = over?.li ?? li, sample = over ? false : isSample;
+    const r = mode==='cv' ? Engine.auditCV({cv:c,vacante,roleId}) : Engine.auditLinkedIn({...l,vacante,roleId});
+    const key='bitt-auditor-'+mode;
+    const last=load(key);
+    setPrev(last? last.total : null);
+    setResult(r);
+    if(store && !sample) save(key,{total:r.total, at:Date.now()});
+    if(store) setTimeout(()=>document.getElementById('resultado')?.scrollIntoView({behavior:'smooth',block:'start'}),50);
+  }
+  useEffect(()=>{ run(false); },[mode]);
+
+  async function handleFile(f){
+    if(!f) return;
+    setBusy('Leyendo '+f.name+'…');
+    try{
+      const txt = f.type==='application/pdf' || /\.pdf$/i.test(f.name) ? await pdfToText(f) : await f.text();
+      if(!txt.trim()) throw new Error('vacío');
+      setIsSample(false);
+      if(mode==='cv'){ setCv(txt); run(true,{cv:txt}); setBusy('Listo: analicé '+f.name+'. Si algo se ve raro, corrige el texto y vuelve a analizar.'); }
+      else {
+        const s=splitLinkedInPdf(txt);
+        const nl={titular:s.titular, acerca:s.acerca, experiencia:s.experiencia, url:s.url};
+        setLi(nl); run(true,{li:nl});
+        setBusy('Listo: analicé '+f.name+'. Revisa que el titular haya quedado bien; si no, pégalo a mano y vuelve a analizar.');
+      }
+    }catch(err){ setBusy('No pude leer ese archivo. Si tu PDF es una imagen escaneada, copia y pega el texto.'); }
+  }
+  function onFile(e){ handleFile(e.target.files?.[0]); e.target.value=''; }
+  function clearAll(){ setIsSample(false); setResult(null); if(mode==='cv') setCv(''); else setLi({titular:'',acerca:'',experiencia:'',url:''}); setVacante(''); setBusy(''); }
+
+  const tab=(id,label,sub)=><button id={'tab-'+id} onClick={()=>{setMode(id); setBusy('');}} aria-pressed={mode===id}
+    className={"flex-1 min-w-0 rounded-xl px-4 py-3 text-left transition "+(mode===id?'bg-bitt text-white shadow-md':'text-fg hover:bg-accentsoft')}>
+    <div className="font-bold text-[15px]">{label}</div><div className={"text-xs "+(mode===id?'text-white/80':'text-muted')}>{sub}</div></button>;
+
+  return <div className="min-h-full relative">
+    {/* Ilustraciones de fondo */}
+    <div aria-hidden="true" className="pointer-events-none fixed inset-0 overflow-hidden z-0">
+      <img src={GEAR1} alt="" className="gear absolute -left-24 top-[38%] w-[300px] opacity-40"/>
+      <img src={GEAR2} alt="" className="gear absolute -right-28 -bottom-24 w-[380px] opacity-40" style={{animationDirection:'reverse'}}/>
+      <img src={GEAR1} alt="" className="gear absolute right-[30%] -top-24 w-[200px] opacity-25"/>
+    </div>
+
+    <header className="relative z-[1]">
+      <div className="wrap max-w-6xl mx-auto pt-8 pb-4 relative">
+        <img src={MOSAIC} alt="" aria-hidden="true" className="hidden lg:block absolute right-[max(16px,env(safe-area-inset-right,0px))] top-6 w-[270px] xl:w-[300px] h-auto drop-shadow-xl"/>
+        <div className="flex items-center gap-4 flex-wrap">
+          <img src={LOGO} alt="bitt" className="h-11 w-auto"/>
+          <span className="text-xs font-bold uppercase tracking-[.14em] bg-sun text-[#0E1B3D] rounded-full px-3 py-1">Analizador IA para tu CV</span>
+        </div>
+        <p className="mt-2 text-xs font-bold uppercase tracking-[.12em] text-accent">Semillero de biodiseño, innovación y tecnología traslacional</p>
+        <h1 className="mt-5 text-[32px] sm:text-[44px] leading-[1.05] font-extrabold tracking-tight text-bitt max-w-[620px]">Auditor de CV y LinkedIn</h1>
+        <p className="mt-2 max-w-[620px] text-muted text-[16px]">Revisa tu hoja de vida o tu perfil como lo haría el filtro automático (ATS) de una empresa grande. Corrige, vuelve a subirlo y mira cuánto sube tu puntaje.</p>
+        <div className="mt-6 flex gap-2 bg-surface border border-line shadow-sm p-1.5 rounded-2xl max-w-xl">
+          {tab('cv','Auditoría de CV','Sube o pega tu hoja de vida')}
+          {tab('li','Auditoría de LinkedIn','Sube el PDF de tu perfil')}
+        </div>
+      </div>
+    </header>
+
+    <main className="relative z-[1] wrap max-w-6xl mx-auto py-8 grid gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] items-start">
+      {/* Entrada */}
+      <section className="bg-surface border border-line rounded-2xl p-5 sm:p-6 flex flex-col gap-5 min-w-0">
+        <div className="flex items-center justify-between gap-3 flex-wrap">
+          <h2 className="text-lg font-extrabold">{mode==='cv'?'Tu hoja de vida':'Tu perfil de LinkedIn'}</h2>
+          <div className="flex gap-2">
+            <button onClick={()=>fileRef.current?.click()} className="rounded-lg border border-line px-3 py-1.5 text-sm font-bold hover:border-sky">Subir PDF o .txt</button>
+            <button onClick={clearAll} className="rounded-lg px-3 py-1.5 text-sm text-muted hover:text-fg">Borrar</button>
+            <input ref={fileRef} id="file" type="file" accept=".pdf,.txt,application/pdf,text/plain" className="hidden" onChange={onFile}/>
+          </div>
+        </div>
+        <Dropzone mode={mode} onPick={()=>fileRef.current?.click()} onDrop={handleFile}/>
+        {isSample && <div className="rounded-xl bg-sunsoft text-sunfg text-sm px-3.5 py-2.5"><b>Esto es un ejemplo</b> para que veas cómo funciona. Bórralo y pon el tuyo.</div>}
+        {busy && <div className="rounded-xl bg-accentsoft text-fg text-sm px-3.5 py-2.5">{busy}</div>}
+
+        {mode==='cv' ? <Field id="cv" label="Texto de tu CV" hint="Copia todo el texto de tu CV (Ctrl+A, Ctrl+C) o sube el PDF. Nada sale de tu navegador." count={(cv.match(/\S+/g)||[]).length+' palabras'}>
+            <textarea id="cv" rows={14} className={inputCls+" mono text-[13px] leading-relaxed"} value={cv} onChange={e=>{setCv(e.target.value);setIsSample(false);}} placeholder="Pega aquí tu hoja de vida…"/>
+          </Field>
+        : <>
+          <Field id="titular" label="Titular" count={li.titular.length} limit={220} hint="La línea que aparece debajo de tu nombre.">
+            <textarea id="titular" rows={2} className={inputCls} value={li.titular} onChange={e=>{setLi({...li,titular:e.target.value});setIsSample(false);}} placeholder="Ej.: Estudiante de Ingeniería Biomédica | Prototipado | Python"/>
+          </Field>
+          <Field id="acerca" label="Acerca de" count={li.acerca.length} limit={2600}>
+            <textarea id="acerca" rows={5} className={inputCls} value={li.acerca} onChange={e=>{setLi({...li,acerca:e.target.value});setIsSample(false);}}/>
+          </Field>
+          <Field id="exp" label="Experiencia (y proyectos)" hint="Pega cada cargo con su descripción. Una línea por logro.">
+            <textarea id="exp" rows={7} className={inputCls+" mono text-[13px]"} value={li.experiencia} onChange={e=>{setLi({...li,experiencia:e.target.value});setIsSample(false);}}/>
+          </Field>
+          <Field id="url" label="Link de tu perfil" hint="Solo con el link no puedo leer tu perfil, porque LinkedIn no deja que otras páginas lo lean. Con el link reviso si tu URL está personalizada; el contenido sale del PDF o de lo que pegues arriba.">
+            <input id="url" className={inputCls} value={li.url} onChange={e=>{setLi({...li,url:e.target.value});setIsSample(false);}} placeholder="linkedin.com/in/tu-nombre"/>
+          </Field>
+          <PhotoCheck/>
+        </>}
+
+        <div className="border-t border-line pt-5 flex flex-col gap-4">
+          <Field id="vacante" label="Vacante (opcional)" hint="El puntaje general no depende de la vacante. Si pegas una, te digo aparte si pasarías el primer filtro con las habilidades que tienes.">
+            <textarea id="vacante" rows={4} className={inputCls} value={vacante} onChange={e=>setVacante(e.target.value)} placeholder="Pega aquí la descripción del cargo…"/>
+          </Field>
+          <Field id="rol" label="Área para la revisión general" hint="General sirve para cualquier carrera. Si eliges un área de biomédica, también reviso las palabras clave de esa área.">
+            <select id="rol" className={inputCls} value={roleId} onChange={e=>setRoleId(e.target.value)}>
+              <option value="general">General, sin un puesto específico (cualquier carrera)</option>
+              {Engine.ROLES.map(r=><option key={r.id} value={r.id}>{r.name}</option>)}
+            </select>
+          </Field>
+        </div>
+        <button id="analizar" onClick={()=>run(true)} className="rounded-xl bg-bitt text-white font-extrabold text-[16px] py-3.5 hover:brightness-110 active:translate-y-px">Analizar {mode==='cv'?'mi CV':'mi perfil'}</button>
+      </section>
+
+      {/* Resultado */}
+      <section id="resultado" className="flex flex-col gap-5 min-w-0">
+        {result && <Result r={result} prev={prev} mode={mode} isSample={isSample}/>}
+      </section>
+    </main>
+    <footer className="relative z-[1] wrap max-w-6xl mx-auto pb-10 text-xs text-muted flex flex-col sm:flex-row gap-4 sm:items-center">
+      <img src={STRIP} alt="" aria-hidden="true" className="w-[180px] h-auto rounded-lg shrink-0"/>
+      <p className="min-w-0"><b className="text-fg">BITT</b> · Semillero de biodiseño, innovación y tecnología traslacional, Universidad de los Andes. El puntaje es una simulación con reglas fijas de lo que revisan los filtros ATS y los reclutadores: úsalo como guía, no como veredicto. Tu texto no se envía a ningún servidor.</p>
+    </footer>
+  </div>;
+}
+
+function Result({r,prev,mode,isSample}){
+  const vTone={pasa:['bg-goodsoft','text-good'],duda:['bg-warnsoft','text-warn'],descarte:['bg-badsoft','text-bad']}[r.verdict.k];
+  return <>
+    <div className="bg-surface border border-line rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row gap-6 items-center">
+      <Gauge score={r.total} prev={isSample?null:prev}/>
+      <div className="flex-1 min-w-0 w-full">
+        <span className={"inline-block rounded-full px-3 py-1 text-xs font-extrabold uppercase tracking-[.1em] "+vTone[0]+" "+vTone[1]}>{r.verdict.t}</span>
+        <p className="mt-2 text-[15px]">{r.verdict.d}</p>
+        <div className="mt-4 flex flex-col gap-3">
+          {r.crit.map(k=><div key={k.key}>
+            <div className="flex justify-between gap-3 text-sm"><span className="font-bold">{k.label}</span><span className="mono text-muted">{k.score}/{k.max}</span></div>
+            <Bar value={k.score} max={k.max}/>
+            <p className="text-xs text-muted mt-1">{k.detail}</p>
+          </div>)}
+        </div>
+      </div>
+    </div>
+
+    {r.vacFit && (()=>{ const v=r.vacFit; const tone={pasa:['bg-goodsoft','text-good','var(--good)'],duda:['bg-warnsoft','text-warn','var(--sun)'],no:['bg-badsoft','text-bad','var(--bad)']}[v.k];
+      return <div className="bg-surface border border-line rounded-2xl p-5 sm:p-6">
+        <div className="flex items-start justify-between gap-4 flex-wrap">
+          <div className="min-w-0">
+            <h3 className="text-lg font-extrabold">Encaje con esta vacante</h3>
+            <span className={"inline-block mt-1.5 rounded-full px-3 py-1 text-xs font-extrabold uppercase tracking-[.1em] "+tone[0]+" "+tone[1]}>{v.t}</span>
+          </div>
+          <div className="text-right"><span className="mono text-[34px] leading-none font-medium">{v.pct}%</span><div className="text-xs text-muted">de lo que piden</div></div>
+        </div>
+        <div className="mt-3"><Bar value={v.pct} max={100} tone={tone[2]}/></div>
+        <p className="text-sm mt-3">{v.d}</p>
+        <div className="mt-3 flex flex-wrap gap-1.5">
+          {r.vac.found.map(k=><span key={'vf'+k} className="rounded-full bg-goodsoft text-good text-xs px-2.5 py-1 font-medium">✓ {k}</span>)}
+          {r.vac.missing.map(k=><span key={'vm'+k} className="rounded-full border border-dashed border-line text-muted text-xs px-2.5 py-1">{k}</span>)}
+        </div>
+      </div>; })()}
+    {r.recs.length>0 && <div className="bg-surface border border-line rounded-2xl p-5 sm:p-6">
+      <h3 className="text-lg font-extrabold">Qué cambiar primero</h3>
+      <p className="text-sm text-muted">Ordenado por cuántos puntos te hace ganar.</p>
+      <ol className="mt-4 flex flex-col gap-3">
+        {r.recs.map((x,i)=><li key={i} className="flex gap-3 rounded-xl bg-surface2 p-3.5">
+          <span className="mono shrink-0 h-7 min-w-[44px] px-2 rounded-lg bg-sun text-[#0E1B3D] text-xs font-medium flex items-center justify-center">+{Math.round(x.pts)}</span>
+          <div className="min-w-0"><div className="font-bold">{x.t}</div><p className="text-sm text-muted mt-0.5">{x.d}</p></div>
+        </li>)}
+      </ol>
+    </div>}
+
+    {r.toRewrite.length>0 && <div className="bg-surface border border-line rounded-2xl p-5 sm:p-6">
+      <h3 className="text-lg font-extrabold">Líneas para reescribir</h3>
+      <p className="text-sm text-muted">Fórmula: <b className="text-fg">verbo de acción + qué hiciste + cómo + resultado con número</b>.</p>
+      <ul className="mt-4 flex flex-col gap-3">
+        {r.toRewrite.map((x,i)=><li key={i} className="border-l-4 border-sun pl-3.5">
+          <p className="mono text-[13px] break-words">“{x.line}”</p>
+          <p className="text-sm text-muted mt-1">{x.hint}</p>
+        </li>)}
+      </ul>
+    </div>}
+
+    <div className="grid gap-5 sm:grid-cols-2">
+      <div className="bg-surface border border-line rounded-2xl p-5 min-w-0">
+        <h3 className="font-extrabold">{r.kwSource==='general'?'Habilidades detectadas':'Palabras clave'}</h3>
+        <p className="text-xs text-muted">{r.kwSource==='vacante'?'Comparadas con la vacante': r.kwSource==='general'?'Herramientas y habilidades concretas que encontré':'Comparadas con "'+r.kwSource+'"'}</p>
+        <div className="mt-3 flex flex-wrap gap-1.5">
+          {r.km.found.map(k=><span key={'f'+k} className="rounded-full bg-goodsoft text-good text-xs px-2.5 py-1 font-medium">✓ {k}</span>)}
+          {r.km.missing.map(k=><span key={'m'+k} className="rounded-full border border-dashed border-line text-muted text-xs px-2.5 py-1">{k}</span>)}
+        </div>
+      </div>
+      <div className="bg-surface border border-line rounded-2xl p-5 min-w-0">
+        <h3 className="font-extrabold">Puestos donde ya encajas</h3>
+        <p className="text-xs text-muted">Según las palabras de tu {mode==='cv'?'CV':'perfil'}</p>
+        <div className="mt-3 flex flex-col gap-2.5">
+          {r.fit.slice(0,4).map(f=><div key={f.id}>
+            <div className="flex justify-between text-sm gap-2"><span className="truncate">{f.name}</span><span className="mono text-muted">{f.pct}%</span></div>
+            <Bar value={f.pct} max={100} tone="var(--sky)"/>
+          </div>)}
+        </div>
+      </div>
+    </div>
+
+    {r.cl.length>0 && <div className="bg-surface border border-line rounded-2xl p-5 sm:p-6">
+      <h3 className="font-extrabold">Frases genéricas detectadas</h3>
+      <ul className="mt-3 flex flex-col gap-2">
+        {r.cl.slice(0,6).map((c,i)=><li key={i} className="text-sm flex gap-2 items-start">
+          <span className={"shrink-0 rounded-md px-2 py-0.5 text-xs font-bold "+(c.evidence?'bg-goodsoft text-good':'bg-badsoft text-bad')}>{c.evidence?'con evidencia':'vacía'}</span>
+          <span className="min-w-0 break-words"><b>{c.term}</b> <span className="text-muted">en “{c.sentence}”</span></span>
+        </li>)}
+      </ul>
+    </div>}
+  </>;
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+
+</html>
